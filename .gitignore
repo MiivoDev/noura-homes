@@ -6,3 +6,7 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Large video files (exceed GitHub 100MB limit)
+public/ Emerald Ridge mp4.mp4
+public/Marble Hill.mov

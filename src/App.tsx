@@ -15,13 +15,47 @@ import Process from './components/sections/Process';
 import LeadGen from './components/sections/LeadGen';
 import Associations from './components/sections/Associations';
 import Testimonials from './components/sections/Testimonials';
+import OurStoryPage from './components/sections/OurStoryPage';
+import SustainableBuildingPracticesPage from './components/sections/SustainableBuildingPracticesPage';
 import Footer from './components/layout/Footer';
 
 export default function App() {
-  return (
-    <SmoothScroll>
+  const isOurStoryPage = typeof window !== 'undefined' && window.location.pathname === '/our-story';
+  const isSustainablePage =
+    typeof window !== 'undefined' && window.location.pathname === '/sustainable-building-practices';
+
+  if (isOurStoryPage) {
+    return (
       <div className="min-h-screen bg-background text-text-dark font-sans selection:bg-primary selection:text-white">
         <Navbar />
+        <SmoothScroll>
+          <main>
+            <OurStoryPage />
+          </main>
+          <Footer />
+        </SmoothScroll>
+      </div>
+    );
+  }
+
+  if (isSustainablePage) {
+    return (
+      <div className="min-h-screen bg-background text-text-dark font-sans selection:bg-primary selection:text-white">
+        <Navbar />
+        <SmoothScroll>
+          <main>
+            <SustainableBuildingPracticesPage />
+          </main>
+          <Footer />
+        </SmoothScroll>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background text-text-dark font-sans selection:bg-primary selection:text-white">
+      <Navbar />
+      <SmoothScroll>
         <main>
           <Hero />
           <Services />
@@ -35,7 +69,7 @@ export default function App() {
           <Testimonials />
         </main>
         <Footer />
-      </div>
-    </SmoothScroll>
+      </SmoothScroll>
+    </div>
   );
 }

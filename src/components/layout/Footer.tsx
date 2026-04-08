@@ -3,16 +3,15 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="relative bg-primary text-white overflow-hidden">
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-10 lg:px-[60px] pt-16 lg:pt-[64px] pb-56 md:pb-72 lg:pb-[340px]">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-16 pt-16 lg:pt-[64px] pb-56 md:pb-72 lg:pb-[340px]">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:items-start">
           <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-3">
-              <div className="size-10 lg:size-12 rounded-full border border-white/40 flex items-center justify-center">
-                <span className="font-display text-lg lg:text-xl leading-none">N</span>
-              </div>
-              <p className="font-display tracking-[0.08em] text-xl lg:text-2xl leading-none">
-                NOURA HOMES
-              </p>
+            <div className="h-14 md:h-16 w-[250px] md:w-[300px]">
+              <img
+                src="/Logo.png"
+                alt="Noura Homes logo"
+                className="h-full w-auto max-w-full object-contain"
+              />
             </div>
 
             <div className="flex items-center gap-2.5">

@@ -50,8 +50,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
   }, [project.images.length, isInView]);
 
   return (
-    <div ref={ref} className="w-[85vw] md:w-[60vw] lg:w-[65vw] flex-shrink-0 group snap-start">
-      <div className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden mb-6">
+    <div ref={ref} className="w-[85vw] md:w-[60vw] lg:w-[62vw] flex-shrink-0 group snap-start">
+      <div className="relative h-[38vh] md:h-[42vh] lg:h-[46vh] overflow-hidden mb-4">
         {project.images.map((img, idx) => (
           <img
             key={idx}
@@ -66,14 +66,14 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         
         {/* Title */}
-        <div className="absolute bottom-8 left-8 z-20">
-          <h3 className="text-white text-4xl md:text-5xl lg:text-5xl font-display">
+        <div className="absolute bottom-6 left-6 z-20">
+          <h3 className="text-white text-3xl md:text-4xl lg:text-4xl font-display">
             {project.title}
           </h3>
         </div>
 
         {/* Slider Indicators */}
-        <div className="absolute bottom-12 right-8 z-20 flex gap-2">
+        <div className="absolute bottom-8 right-6 z-20 flex gap-2">
           {project.images.map((_, idx) => (
             <div
               key={idx}
@@ -86,8 +86,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
       </div>
       
       {/* Content below image */}
-      <div className="border-t border-primary/20 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-        <p className="text-primary max-w-xl text-base md:text-lg leading-relaxed">
+      <div className="border-t border-primary/20 pt-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <p className="text-primary max-w-xl text-sm md:text-base leading-relaxed">
           {project.description}
         </p>
         <a
@@ -95,7 +95,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           className="inline-flex items-center gap-2 text-primary font-medium tracking-wide hover:text-accent transition-colors pb-1 border-b border-primary hover:border-accent whitespace-nowrap"
         >
           See Project
-          <ArrowRight className="w-5 h-5" />
+          <ArrowRight className="w-4 h-4" />
         </a>
       </div>
     </div>
@@ -118,10 +118,10 @@ export default function Projects() {
   };
 
   return (
-    <section className="py-12 md:py-14 bg-[#FDFBF7] overflow-hidden">
+    <section className="py-8 md:py-10 bg-[#FDFBF7] overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-        <div className="text-center mb-16">
-          <h2 className="text-[48px] font-display text-primary">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-[36px] md:text-[40px] font-display text-primary">
             Our Signature Projects
           </h2>
         </div>
@@ -130,7 +130,7 @@ export default function Projects() {
       <div className="w-full pl-8 lg:pl-16 2xl:pl-[calc((100vw-1600px)/2+4rem)]">
         <div 
           ref={scrollRef}
-          className="flex gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-8 pr-8 lg:pr-16"
+          className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4 pr-8 lg:pr-16"
         >
           {projects.map((project, index) => (
             <div key={index}>
@@ -141,18 +141,18 @@ export default function Projects() {
       </div>
 
       {/* Navigation Arrows */}
-      <div className="flex justify-center gap-4 mt-8">
+      <div className="flex justify-center gap-3 mt-5">
         <button 
           onClick={scrollLeft}
-          className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+          className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-4 h-4" />
         </button>
         <button 
           onClick={scrollRight}
-          className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+          className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-4 h-4" />
         </button>
       </div>
     </section>
