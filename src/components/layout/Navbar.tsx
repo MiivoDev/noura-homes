@@ -28,20 +28,20 @@ const navItems: NavItem[] = [
     children: [
       { label: 'Our Story', href: '/our-story' },
       { label: 'Sustainable Building Practices', href: '/sustainable-building-practices' },
-      { label: 'Awards, Associations and Community Involvements', href: '#awards-associations-and-community-involvements' },
-      { label: 'FAQ', href: '#faq' }
+      { label: 'Awards, Associations and Community Involvements', href: '/about/awards-associations-community' },
+      { label: 'FAQ', href: '/faq' }
     ]
   },
   {
     label: 'Services',
     href: '#services',
     children: [
-      { label: 'General Contracting and Development Services', href: '#general-contracting-and-development-services' },
-      { label: 'Luxury Custom Homes', href: '#luxury-custom-homes' },
-      { label: 'Luxury Townhouse', href: '#luxury-townhouse' },
-      { label: 'Luxury Subdivisions', href: '#luxury-subdivisions' },
-      { label: 'House Renovations', href: '#house-renovations' },
-      { label: 'Service Areas', href: '#service-areas' }
+      { label: 'General Contracting and Development Services', href: '/services/general-contracting-development-services' },
+      { label: 'Luxury Custom Homes', href: '/services/luxury-custom-homes' },
+      { label: 'Luxury Townhouse', href: '/services/luxury-townhouse' },
+      { label: 'Luxury Subdivisions', href: '/services/luxury-subdivisions' },
+      { label: 'House Renovations', href: '/services/house-renovations' },
+      { label: 'Service Areas', href: '/services/service-areas' }
     ]
   },
   {
@@ -73,8 +73,7 @@ const navItems: NavItem[] = [
       { label: 'Coming Soon', href: '#coming-soon' }
     ]
   },
-  { label: 'Virtual Tours', href: '#virtual-tours' },
-  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Testimonials', href: '/testimonials' },
   { label: 'Blogs', href: '#blogs' }
 ];
 

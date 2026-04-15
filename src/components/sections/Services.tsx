@@ -6,32 +6,38 @@ const services = [
   {
     title: "General Contracting and Development Services",
     image: "/2nd%20fold/Rectangle%2011.png",
-    description: "Embrace the confidence of building with Noura Homes, a full-service partner in custom construction and development, dedicated to managing every detail with care, precision, and an unwavering commitment to lasting quality."
+    description: "Embrace the confidence of building with Noura Homes, a full-service partner in custom construction and development, dedicated to managing every detail with care, precision, and an unwavering commitment to lasting quality.",
+    href: "/services/general-contracting-development-services"
   },
   {
     title: "Luxury Custom Homes",
     image: "/2nd%20fold/Rectangle%2075.png",
-    description: "Experience the seamless journey of creating your dream home with Noura Homes. From concept to completion, we handle every detail with care, collaboration, and integrity, ensuring your custom home reflects not just your style, but your story."
+    description: "Experience the seamless journey of creating your dream home with Noura Homes. From concept to completion, we handle every detail with care, collaboration, and integrity, ensuring your custom home reflects not just your style, but your story.",
+    href: "/services/luxury-custom-homes"
   },
   {
     title: "Luxury Townhouse",
     image: "/2nd%20fold/Rectangle%2074.png",
-    description: "Discover the art of refined living with Noura Homes' luxury townhouse communities, where elegance, comfort, and individuality unite. Each townhouse offers generous space, timeless design, and modern functionality, redefining what it means to live beautifully."
+    description: "Discover the art of refined living with Noura Homes' luxury townhouse communities, where elegance, comfort, and individuality unite. Each townhouse offers generous space, timeless design, and modern functionality, redefining what it means to live beautifully.",
+    href: "/services/luxury-townhouse"
   },
   {
     title: "Luxury Subdivisions",
     image: "/2nd%20fold/Rectangle%2076.png",
-    description: "Create your dream home within a Noura Homes community. Each subdivision is thoughtfully planned and beautifully crafted, blending functionality, elegance, and a genuine sense of belonging to build spaces truly centered around you."
+    description: "Create your dream home within a Noura Homes community. Each subdivision is thoughtfully planned and beautifully crafted, blending functionality, elegance, and a genuine sense of belonging to build spaces truly centered around you.",
+    href: "/services/luxury-subdivisions"
   },
   {
     title: "House Renovations",
     image: "/2nd%20fold/Rectangle%2077.png",
-    description: "Reimagine your home with Noura Homes, where innovation and craftsmanship meet to create spaces that grow with you. Each renovation combines elegant design, modern functionality, and energy efficiency, enhancing your lifestyle while preserving the heart of your home."
+    description: "Reimagine your home with Noura Homes, where innovation and craftsmanship meet to create spaces that grow with you. Each renovation combines elegant design, modern functionality, and energy efficiency, enhancing your lifestyle while preserving the heart of your home.",
+    href: "/services/house-renovations"
   },
   {
     title: "Service Areas",
     image: "/2nd%20fold/Rectangle%2078.png",
-    description: "Build your dream home where lifestyle and community meet. At Noura Homes, we proudly serve families across the Lower Mainland, including Coquitlam, Port Coquitlam, Port Moody, Maple Ridge, Pitt Meadows, Chilliwack, Mission, Burnaby, West Vancouver and many others."
+    description: "Build your dream home where lifestyle and community meet. At Noura Homes, we proudly serve families across the Lower Mainland, including Coquitlam, Port Coquitlam, Port Moody, Maple Ridge, Pitt Meadows, Chilliwack, Mission, Burnaby, West Vancouver and many others.",
+    href: "/services/service-areas"
   }
 ];
 
@@ -95,9 +101,12 @@ export default function Services() {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {service.description}
                 </p>
-                <button className="mt-5 inline-flex items-center justify-center px-5 py-2 border border-primary text-primary text-sm font-medium hover:bg-primary hover:text-white transition-colors">
+                <a
+                  href={service.href ?? '#'}
+                  className="mt-5 inline-flex items-center justify-center px-5 py-2 border border-primary text-primary text-sm font-medium hover:bg-primary hover:text-white transition-colors"
+                >
                   Explore
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
