@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { Play } from 'lucide-react';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/3baccb3a-3612-434b-a231-f18860b1678e';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/a08ec9d3-d5ff-4033-970f-07cb6efce460';
+const heroImage = '/testimonials-hero-force-refresh-20260416.png';
+const ctaImage = 'https://www.figma.com/api/mcp/asset/0dddc23f-4fba-4322-b17b-c4adbe41ecd7';
 
 type FeaturedTestimonial = {
   quoteTitle: string;
@@ -14,11 +13,11 @@ type FeaturedTestimonial = {
 
 const featuredTestimonials: FeaturedTestimonial[] = [
   {
-    quoteTitle: 'One-Minute Decision.',
+    quoteTitle: 'Turning a Vision into a Reality with Unmatched Quality',
     quoteBody:
-      'This was the first house we ever built, and everything was new to us. Noura Construction walked us through the entire process and was incredibly helpful. We saw the quality of their work on another house, and it was a one-minute decision to go with them. Now, it truly feels like our home, like putting on a shoe that perfectly fits. I would absolutely recommend Noura Homes.',
-    author: 'Alex',
-    image: 'https://www.figma.com/api/mcp/asset/e60b567b-9972-4307-bd19-78d5b37b059c',
+      'What drew us to Noura Homes was the attention to detail and the ability to customize our home exactly how we wanted it. From initial design to final touches, the team was supportive throughout. They did not just build a house; they built our home. The craftsmanship and care made all the difference.',
+    author: 'The Smith Family',
+    image: 'https://www.figma.com/api/mcp/asset/b6b9954a-ca0c-449f-8fa1-28402cf16dfe',
     imageLeft: true,
   },
   {
@@ -30,27 +29,11 @@ const featuredTestimonials: FeaturedTestimonial[] = [
     imageLeft: false,
   },
   {
-    quoteTitle: 'The quality is exceptional and they truly care about the details.',
+    quoteTitle: 'One-Minute Decision.',
     quoteBody:
-      'This was the first house we ever built, and everything was new to us. Noura Construction walked us through the entire process and was incredibly helpful. We saw the quality of their work on another house, and it was a one-minute decision to go with them. Now, it truly feels like our home, and we would absolutely recommend Noura Homes.',
-    author: 'Homeowner',
-    image: 'https://www.figma.com/api/mcp/asset/7bf062c9-3851-4cc1-8b05-83a4381819f5',
-    imageLeft: true,
-  },
-  {
-    quoteTitle: 'Quality Craftsmanship and Unmatched Design',
-    quoteBody:
-      'We bought the house because of the quality, functional layout, and modern finishing. We especially love the kitchen and living area. Dealing with the Noura Homes team was a pleasant experience; they were responsive and communication was always clear. We would definitely recommend Noura Homes to our friends and family.',
-    author: 'The Chen Family',
-    image: 'https://www.figma.com/api/mcp/asset/7eeba29f-cff4-49f2-8817-95945adc8b7b',
-    imageLeft: false,
-  },
-  {
-    quoteTitle: 'Turning a Vision into a Reality with Unmatched Quality',
-    quoteBody:
-      'What drew us to Noura Homes was the attention to detail and the ability to customize our home exactly how we wanted it. From initial design to final touches, the team was supportive throughout. They did not just build a house; they built our home. The craftsmanship and care made all the difference.',
-    author: 'The Smith Family',
-    image: 'https://www.figma.com/api/mcp/asset/b6b9954a-ca0c-449f-8fa1-28402cf16dfe',
+      'This was the first house we ever built, and everything was new to us. Noura Construction walked us through the entire process and was incredibly helpful. We saw the quality of their work on another house, and it was a one-minute decision to go with them. Now, it truly feels like our home, like putting on a shoe that perfectly fits. I would absolutely recommend Noura Homes.',
+    author: 'Alex',
+    image: 'https://www.figma.com/api/mcp/asset/e60b567b-9972-4307-bd19-78d5b37b059c',
     imageLeft: true,
   },
 ];
@@ -80,6 +63,22 @@ const ownerMessages = [
     author: 'Rosa Rosa',
     body: 'It was a great pleasure to get to know Jamila and her two daughters, Asana and Aram. This builder/seller team is all about making their clients happy, even at the expense of their profit. I was absolutely amazed that in that kind of business people like them still exist.',
   },
+  {
+    author: 'The Smith Family',
+    body: 'What drew us to Noura Homes was the attention to detail and the ability to customize our home exactly how we wanted it. From initial design to final touches, the team was supportive throughout and delivered exceptional quality.',
+  },
+  {
+    author: 'Sebastian and Stephanie',
+    body: 'Noura stood out among other builders from day one. The process felt smooth and transparent, every step was explained clearly, and the final home reflected every detail we asked for.',
+  },
+  {
+    author: 'Alex',
+    body: 'This was the first house we ever built, and Noura Construction guided us through everything with patience and care. The quality made it a one-minute decision for us, and the result truly feels like home.',
+  },
+  {
+    author: 'Homeowner, Coquitlam',
+    body: 'The quality is exceptional and the team truly cares about the details. Their communication, reliability, and craftsmanship made the entire experience stress-free for our family.',
+  },
 ];
 
 function FeaturedRow({ item }: { item: FeaturedTestimonial }) {
@@ -108,16 +107,19 @@ function FeaturedRow({ item }: { item: FeaturedTestimonial }) {
 }
 
 export default function TestimonialsPage() {
-  const ownerMessageSlides = [ownerMessages.slice(0, 3), ownerMessages.slice(3)];
-  const [activeOwnerSlide, setActiveOwnerSlide] = useState(0);
+  const loopingOwnerMessages = [...ownerMessages, ...ownerMessages];
 
   return (
     <div className="bg-background">
       <section className="relative min-h-[820px] pt-[82px] overflow-hidden">
-        <img src={heroImage} alt="Happy family in their home" className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={heroImage}
+          alt="Happy family in their home"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 max-w-[1600px] mx-auto min-h-[820px] px-8 lg:px-16 flex items-center justify-center">
-          <h1 className="font-display text-[46px] md:text-[64px] leading-[1.08] tracking-[-0.6px] text-white text-center">
+          <h1 className="-translate-y-5 font-display text-[46px] md:text-[64px] leading-[1.08] tracking-[-0.6px] text-white text-center">
             What Our Clients Love
           </h1>
         </div>
@@ -139,32 +141,24 @@ export default function TestimonialsPage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
           <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] text-primary text-center">More Messages from Owners</h2>
-          <div className="mt-12 mx-auto max-w-[1302px] grid grid-cols-1 lg:grid-cols-3 gap-[30px] justify-items-center">
-            {ownerMessageSlides[activeOwnerSlide].map((item) => (
-              <article key={item.author} className="w-full max-w-[414px] h-[340px] border border-primary bg-white px-[27px] py-6 flex flex-col">
-                <img src="/mdi_comma.svg" alt="" aria-hidden="true" className="h-5 w-5" />
-                <p className="mt-3 text-[16px] leading-[1.5] text-primary/95 flex-1 overflow-y-auto pr-1">{item.body}</p>
-                <p className="mt-7 text-[24px] leading-[1.4] text-primary">{item.author}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-8 flex justify-center items-center gap-2">
-            {ownerMessageSlides.map((_, index) => (
-              <button
-                key={`owner-slide-${index}`}
-                onClick={() => setActiveOwnerSlide(index)}
-                aria-label={`Show owner messages slide ${index + 1}`}
-                className={index === activeOwnerSlide ? 'h-2 w-14 rounded-full bg-secondary' : 'h-2 w-5 rounded-full bg-secondary/30'}
-              />
-            ))}
+          <div className="mt-12 relative left-1/2 right-1/2 w-screen -ml-[50vw] -mr-[50vw] overflow-hidden">
+            <div className="flex gap-[30px] w-max animate-marquee">
+              {loopingOwnerMessages.map((item, index) => (
+                <article key={`${item.author}-${index}`} className="w-[414px] h-[340px] border border-primary bg-white px-[27px] py-6 flex flex-col shrink-0">
+                  <img src="/mdi_comma.svg" alt="" aria-hidden="true" className="h-5 w-5" />
+                  <p className="mt-3 text-[16px] leading-[1.5] text-primary/95 flex-1 pr-1">{item.body}</p>
+                  <p className="mt-7 text-[24px] leading-[1.4] text-primary">{item.author}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative min-h-[520px] overflow-hidden">
+      <section className="relative min-h-[600px] overflow-hidden">
         <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[520px] px-8 lg:px-16 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
             <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">

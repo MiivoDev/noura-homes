@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   {
     label: 'About',
-    href: '/#about',
+    href: '#about',
     children: [
       { label: 'Our Story', href: '/our-story' },
       { label: 'Sustainable Building Practices', href: '/sustainable-building-practices' },
@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
   },
   {
     label: 'Services',
-    href: '/#services',
+    href: '#services',
     children: [
       { label: 'General Contracting and Development Services', href: '/services/general-contracting-development-services' },
       { label: 'Luxury Custom Homes', href: '/services/luxury-custom-homes' },
@@ -46,35 +46,35 @@ const navItems: NavItem[] = [
   },
   {
     label: 'Our Projects',
-    href: '/#our-projects',
+    href: '#our-projects',
     children: [
       {
         label: 'Current Projects',
-        href: '/#current-projects',
+        href: '#current-projects',
         subItems: [
-          { label: 'Marble Hill', href: '/#marble-hill' },
-          { label: 'Emerald Ridge', href: '/#emerald-ridge' },
-          { label: 'Multi-Family Homes', href: '/#multi-family-homes' }
+          { label: 'Marble Hill', href: '#marble-hill' },
+          { label: 'Emerald Ridge', href: '#emerald-ridge' },
+          { label: 'Multi-Family Homes', href: '#multi-family-homes' }
         ]
       },
       {
         label: 'Past Projects',
-        href: '/#past-projects',
+        href: '#past-projects',
         subItems: [
-          { label: 'Custom Homes', href: '/#custom-homes' },
-          { label: 'Aura 2', href: '/#aura-2' },
-          { label: 'Trafalgar Luxury Townhomes', href: '/#trafalgar-luxury-townhomes' },
-          { label: 'Platinum Rose Estates', href: '/#platinum-rose-estates' },
-          { label: 'Noura Estates 1 & 2', href: '/#noura-estates-1-and-2' },
-          { label: 'Aura Phase 1', href: '/#aura-phase-1' },
-          { label: 'Highland', href: '/#highland' }
+          { label: 'Custom Homes', href: '#custom-homes' },
+          { label: 'Aura 2', href: '#aura-2' },
+          { label: 'Trafalgar Luxury Townhomes', href: '#trafalgar-luxury-townhomes' },
+          { label: 'Platinum Rose Estates', href: '#platinum-rose-estates' },
+          { label: 'Noura Estates 1 & 2', href: '#noura-estates-1-and-2' },
+          { label: 'Aura Phase 1', href: '#aura-phase-1' },
+          { label: 'Highland', href: '#highland' }
         ]
       },
-      { label: 'Coming Soon', href: '/#coming-soon' }
+      { label: 'Coming Soon', href: '#coming-soon' }
     ]
   },
   { label: 'Testimonials', href: '/testimonials' },
-  { label: 'Blogs', href: '/#blogs' }
+  { label: 'Blogs', href: '#blogs' }
 ];
 
 export default function Navbar() {
@@ -198,11 +198,9 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a href="/#contact">
-          <Button variant="default" className="hidden md:inline-flex">
-            Contact Us
-          </Button>
-        </a>
+        <Button variant="default" className="hidden md:inline-flex">
+          Contact Us
+        </Button>
 
         <button
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -243,7 +241,7 @@ export default function Navbar() {
             ))}
 
             <a
-              href="/#contact"
+              href="#contact"
               className="inline-flex items-center justify-center h-10 px-5 bg-secondary text-white text-sm font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
             >

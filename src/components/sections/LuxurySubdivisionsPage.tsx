@@ -1,15 +1,15 @@
 const heroImage = 'https://www.figma.com/api/mcp/asset/536c2b67-4276-4c76-8ae8-302f6f8fc0a0';
 const detailImage = 'https://www.figma.com/api/mcp/asset/ac4abf6e-c72c-4ef2-a49b-514f8b5ff745';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/a9c211f9-d003-4833-a7bc-2251dafdd96f';
+const ctaImage = 'https://www.figma.com/api/mcp/asset/0dddc23f-4fba-4322-b17b-c4adbe41ecd7';
 
 export default function LuxurySubdivisionsPage() {
   return (
     <div className="bg-background">
       <section className="bg-background">
-        <div className="max-w-[1600px] mx-auto min-h-[820px] pt-[82px] grid grid-cols-1 lg:grid-cols-2">
+        <div className="max-w-[1600px] mx-auto min-h-[820px] pt-[82px] grid grid-cols-1 lg:grid-cols-[40%_60%]">
           <div className="px-8 lg:px-16 py-14 lg:py-24 flex items-center lg:pr-10">
             <div className="max-w-[541px]">
-              <h1 className="font-display text-[46px] md:text-[64px] leading-[1.08] tracking-[-0.6px] text-primary">
+              <h1 className="font-display text-[40px] md:text-[48px] leading-[1.08] tracking-[-0.6px] text-primary">
                 Transforming Communities Through Luxury Subdivisions
               </h1>
               <p className="mt-4 text-[16px] leading-[1.5] text-primary/90">
@@ -73,10 +73,10 @@ export default function LuxurySubdivisionsPage() {
         </div>
       </section>
 
-      <section className="relative min-h-[520px] overflow-hidden">
+      <section className="relative min-h-[600px] overflow-hidden">
         <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[520px] px-8 lg:px-16 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
             <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">

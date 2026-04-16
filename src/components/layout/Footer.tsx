@@ -54,73 +54,51 @@ export default function Footer() {
           </div>
 
           <div className="grid gap-10 sm:grid-cols-2 lg:flex lg:gap-[59px]">
-            <div className="w-full max-w-[200px]">
-              <p className="text-base font-medium mb-3">About</p>
-              <nav className="space-y-2.5 text-sm leading-6 text-white/80">
-                <a href="/our-story" className="block hover:text-white transition-colors">Our Story</a>
-                <a href="/sustainable-building-practices" className="block hover:text-white transition-colors">Sustainable Building</a>
-                <a href="/about/awards-associations-community" className="block hover:text-white transition-colors">Awards & Associations</a>
-                <a href="/faq" className="block hover:text-white transition-colors">FAQ</a>
-              </nav>
-            </div>
-
-            <div className="w-full max-w-[200px]">
-              <p className="text-base font-medium mb-3">Services</p>
-              <nav className="space-y-2.5 text-sm leading-6 text-white/80">
-                <a href="/services/luxury-custom-homes" className="block hover:text-white transition-colors">Luxury Custom Homes</a>
-                <a href="/services/luxury-townhouse" className="block hover:text-white transition-colors">Luxury Townhouse</a>
-                <a href="/services/luxury-subdivisions" className="block hover:text-white transition-colors">Luxury Subdivisions</a>
-                <a href="/services/house-renovations" className="block hover:text-white transition-colors">House Renovations</a>
-                <a href="/services/general-contracting-development-services" className="block hover:text-white transition-colors">General Contracting</a>
-                <a href="/services/service-areas" className="block hover:text-white transition-colors">Service Areas</a>
-              </nav>
+            <div className="w-full max-w-[260px]">
+              <div className="flex items-center gap-1.5 mb-3">
+                <Phone className="size-5 shrink-0" strokeWidth={1.6} />
+                <p className="text-base leading-6">Contact</p>
+              </div>
+              <div className="space-y-3.5 text-base leading-6">
+                <p>Sales - (604) 200-3524</p>
+                <p>Office - (778) 285-0503</p>
+              </div>
             </div>
 
             <div className="w-full max-w-[260px]">
-              <p className="text-base font-medium mb-3">Contact</p>
-              <div className="space-y-3.5 text-sm leading-6 text-white/80">
-                <div className="flex items-start gap-1.5">
-                  <Phone className="size-4 shrink-0 mt-0.5" strokeWidth={1.6} />
-                  <div>
-                    <p>Sales: (604) 200-3524</p>
-                    <p>Office: (778) 285-0503</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-1.5">
-                  <MapPin className="size-4 shrink-0 mt-0.5" strokeWidth={1.6} />
-                  <a
-                    href="https://maps.google.com/?q=Suite+201+3387+David+Ave+Coquitlam+BC"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline underline-offset-2 hover:text-white transition-colors"
-                  >
-                    Suite 201 - 3387 David Ave,<br />Coquitlam, BC V3E 0K4
-                  </a>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Mail className="size-4 shrink-0" strokeWidth={1.6} />
-                  <a href="mailto:info@nourahomes.com" className="hover:text-white transition-colors">
-                    info@nourahomes.com
-                  </a>
-                </div>
+              <div className="flex items-center gap-1.5 mb-3">
+                <MapPin className="size-5 shrink-0" strokeWidth={1.6} />
+                <p className="text-base leading-6">Location</p>
               </div>
+              <a
+                href="https://www.nourahomes.com/pages/contact"
+                target="_blank"
+                rel="noreferrer"
+                className="text-base leading-6 underline underline-offset-2"
+              >
+                Suite 201 - 3387 David Ave, Coquitlam, BC V3E 0K4
+              </a>
+            </div>
+
+            <div className="w-full max-w-[260px]">
+              <div className="flex items-center gap-1.5 mb-3">
+                <Mail className="size-5 shrink-0" strokeWidth={1.6} />
+                <p className="text-base leading-6">Mail</p>
+              </div>
+              <a href="mailto:info@nourahomes.com" className="text-base leading-6">
+                info@nourahomes.com
+              </a>
             </div>
           </div>
 
-          <div className="space-y-[13px] text-sm leading-6 text-white/80 lg:text-right lg:min-w-[105px]">
-            <a href="/testimonials" className="block hover:text-white transition-colors">
-              Testimonials
-            </a>
-            <a href="/#contact" className="block hover:text-white transition-colors">
-              Contact Us
-            </a>
-            <a href="#" className="block hover:text-white transition-colors">
+          <div className="space-y-[13px] text-base leading-6 lg:text-right lg:min-w-[105px]">
+            <a href="#" className="block">
               Privacy Policy
             </a>
-            <a href="#" className="block hover:text-white transition-colors">
+            <a href="#" className="block">
               Terms of Use
             </a>
-            <a href="#" className="block hover:text-white transition-colors">
+            <a href="#" className="block">
               Cookie Notice
             </a>
           </div>

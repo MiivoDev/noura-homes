@@ -2,6 +2,7 @@ const heroImage = 'https://www.figma.com/api/mcp/asset/1b876172-85fc-445a-b80a-6
 const whatWeOfferImage = 'https://www.figma.com/api/mcp/asset/339e17ec-dae7-42ef-9e92-f9d271027784';
 const processImage = 'https://www.figma.com/api/mcp/asset/69b2f4a7-9dd6-448c-8dbe-85681dafdbdc';
 const whyBuildImage = 'https://www.figma.com/api/mcp/asset/5cae3caf-dd5a-4636-ad20-ee9b9befddd3';
+const ctaImage = 'https://www.figma.com/api/mcp/asset/0dddc23f-4fba-4322-b17b-c4adbe41ecd7';
 
 const offerings = [
   {
@@ -99,10 +100,10 @@ export default function GeneralContractingPage() {
   return (
     <div className="bg-background">
       <section className="bg-background">
-        <div className="max-w-[1600px] mx-auto min-h-[820px] pt-[82px] grid grid-cols-1 lg:grid-cols-2">
+        <div className="max-w-[1600px] mx-auto min-h-[820px] pt-[82px] grid grid-cols-1 lg:grid-cols-[40%_60%]">
           <div className="px-8 lg:px-16 py-14 lg:py-24 flex items-center">
             <div className="max-w-[541px]">
-              <h1 className="font-display text-[46px] md:text-[64px] leading-[1.08] tracking-[-0.6px] text-primary">
+              <h1 className="font-display text-[40px] md:text-[48px] leading-[1.08] tracking-[-0.6px] text-primary">
                 General Contracting and Development Services
               </h1>
               <p className="mt-4 text-[16px] leading-[1.5] text-primary/90">
@@ -158,10 +159,10 @@ export default function GeneralContractingPage() {
         </div>
       </section>
 
-      <section className="relative min-h-[520px] overflow-hidden">
-        <img src={whatWeOfferImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[520px] px-8 lg:px-16 flex items-center justify-center">
+      <section className="relative min-h-[600px] overflow-hidden">
+        <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
             <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">

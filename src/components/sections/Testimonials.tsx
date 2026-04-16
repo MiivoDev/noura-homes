@@ -21,7 +21,7 @@ export default function Testimonials() {
             className="relative w-full aspect-[16/10] bg-gray-200"
           >
             <img 
-              src="/Noura_Alex.png" 
+              src="/testimonials-hero-force-refresh-20260416.png" 
               alt="Alex - Custom Homeowner" 
               className="w-full h-full object-cover"
             />
@@ -68,7 +68,7 @@ export default function Testimonials() {
             </button>
           </div>
           
-          <a href="#" className="inline-flex items-center gap-2 text-primary font-medium text-base md:text-lg border-b border-primary pb-1 hover:opacity-70 transition-opacity">
+          <a href="/testimonials" className="inline-flex items-center gap-2 text-primary font-medium text-base md:text-lg border-b border-primary pb-1 hover:opacity-70 transition-opacity">
             More Client Stories <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </a>
         </div>
