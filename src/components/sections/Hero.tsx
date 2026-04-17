@@ -10,7 +10,7 @@ const slides = [
       "For over 30 years, we've blended artistry, integrity, and family values to build homes that are as unique as the families who live in them."
   },
   {
-    video: "/Marble Hill.mov",
+    video: "/Marble Hill.mp4",
     chip: "Bookings open",
     title: "Marble Hill - The New Residential Project.",
     description:
