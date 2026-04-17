@@ -50,9 +50,9 @@ const navItems: NavItem[] = [
     children: [
       {
         label: 'Current Projects',
-        href: '#current-projects',
+        href: '/projects/current/marble-hill',
         subItems: [
-          { label: 'Marble Hill', href: '#marble-hill' },
+          { label: 'Marble Hill', href: '/projects/current/marble-hill' },
           { label: 'Emerald Ridge', href: '#emerald-ridge' },
           { label: 'Multi-Family Homes', href: '#multi-family-homes' }
         ]
@@ -126,7 +126,7 @@ export default function Navbar() {
               <img src="/Youtube.svg" alt="YouTube" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
             <a href="https://goo.gl/maps/7xGbVKmpyiVszKQm9" target="_blank" rel="nofollow noreferrer" aria-label="Google Maps" className="opacity-100 hover:opacity-80 transition-opacity">
-              <img src="/GoogleMaps.svg" alt="Google Maps" className="w-6 h-6 md:w-7 md:h-7" />
+              <img src="/GoogleMapsIcon.svg?v=20260417-1" alt="Google Maps" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
           </div>
         </div>
@@ -232,14 +232,29 @@ export default function Navbar() {
                 {item.children && (
                   <div className="mt-2 pl-3 border-l border-gray-200 space-y-1">
                     {item.children.map((child) => (
-                      <a
-                        key={child.label}
-                        href={child.href}
-                        className="block text-sm text-gray-600"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {child.label}
-                      </a>
+                      <div key={child.label} className="space-y-1">
+                        <a
+                          href={child.href}
+                          className="block text-sm text-gray-600"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {child.label}
+                        </a>
+                        {child.subItems && (
+                          <div className="pl-3 border-l border-gray-200 space-y-1">
+                            {child.subItems.map((subItem) => (
+                              <a
+                                key={subItem.label}
+                                href={subItem.href}
+                                className="block text-sm text-gray-500"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {subItem.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 )}

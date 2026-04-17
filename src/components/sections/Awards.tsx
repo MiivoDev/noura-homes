@@ -6,7 +6,9 @@ const awards = [
     items: [
       "Best Custom Design Best Single",
       "Best Family Home Over 2,000 sq. Ft.",
-      "Best Landscape Design"
+      "Best Landscape Design",
+      "Business Leader of the Year at Tri-Cities Chamber for our President, Jamileh Askarian",
+      "Business of the Year (20+ Employees) at Tri-Cities Chamber"
     ],
     variant: "blue"
   },
@@ -15,7 +17,15 @@ const awards = [
     items: [
       "Best Custom Design Best Single",
       "Best Family Home Over 2,000 sq. Ft.",
-      "Best Landscape Design"
+      "Best Landscape Design",
+      "Business Leader of the Year at Ridge Meadows Chamber for our President, Jamileh Askarian"
+    ],
+    variant: "white"
+  },
+  {
+    title: "RIDGE MEADOWS CHAMBER",
+    items: [
+      "Won 2026 Environmental Leader of the Year Award"
     ],
     variant: "white"
   },
@@ -28,22 +38,6 @@ const awards = [
     ],
     variant: "blue"
   },
-  {
-    title: "RIDGE MEADOWS CHAMBER",
-    items: [
-      "Won 2026 Environmental Leader of the Year Award"
-    ],
-    variant: "white"
-  },
-  {
-    title: "2026 NOMINATIONS",
-    items: [
-      "Business Leader of the Year at Ridge Meadows Chamber for our President, Jamileh Askarian",
-      "Business Leader of the Year at Tri-Cities Chamber for our President, Jamileh Askarian",
-      "Business of the Year (20+ Employees) at Tri-Cities Chamber"
-    ],
-    variant: "white"
-  }
 ];
 
 export default function Awards() {
@@ -79,7 +73,7 @@ export default function Awards() {
           </motion.div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 md:gap-7 mt-20 md:mt-24 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-3 md:gap-y-7 mt-20 md:mt-24 justify-items-center items-start md:max-w-[920px] md:mx-auto">
           {awards.map((award, index) => (
             <motion.div
               key={index}
@@ -87,11 +81,11 @@ export default function Awards() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className={`relative w-full md:w-[420px] lg:w-[430px] px-[30px] pt-[50px] pb-[50px] h-[380px] ${
+              className={`relative w-full max-w-[430px] px-[30px] pt-[50px] pb-[50px] h-[380px] transition-transform ${
                 award.variant === 'blue' 
                   ? 'bg-secondary text-white' 
                   : 'bg-white text-primary'
-              }`}
+              } ${index < 2 ? 'md:-translate-x-4' : 'md:translate-x-4'}`}
             >
               {/* Award Icon */}
               <div className="absolute -top-12 left-6 w-24 h-24 flex items-center justify-center">
@@ -104,8 +98,7 @@ export default function Awards() {
               
               <div>
                 <h3
-                  className="font-display font-semibold mb-4 whitespace-pre-line leading-snug uppercase"
-                  style={{ fontSize: '20px' }}
+                  className="font-display font-semibold mb-4 whitespace-pre-line leading-snug uppercase text-[18px] md:text-[19px]"
                 >
                   {award.title}
                 </h3>
@@ -115,13 +108,13 @@ export default function Awards() {
                   award.variant === 'blue' ? 'bg-white/30' : 'bg-primary/30'
                 }`} />
 
-                <ul className="space-y-2.5 text-left">
+                <ul className="space-y-2 text-left">
                   {award.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className={`mt-2 w-1 h-1 rounded-full flex-shrink-0 ${
                         award.variant === 'blue' ? 'bg-white' : 'bg-primary'
                       }`} />
-                      <span className={`text-sm md:text-[19px] ${
+                      <span className={`text-sm md:text-[16px] leading-relaxed ${
                         award.variant === 'blue' ? 'text-white/90' : 'text-primary/90'
                       }`}>
                         {item}

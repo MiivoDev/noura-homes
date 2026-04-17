@@ -122,7 +122,7 @@ export default function GeneralContractingPage() {
 
       <section className="bg-white">
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-[615px_1fr] gap-12 items-center py-16 lg:py-20 px-8 lg:px-16">
-          <img src={whatWeOfferImage} alt="What we offer" className="w-full h-full min-h-[360px] object-cover" />
+          <img src={whatWeOfferImage} alt="What we offer" className="self-start w-full h-[320px] md:h-[360px] lg:h-[420px] object-cover" />
           <div>
             <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] text-primary mb-6">What We Offer</h2>
             <DetailList items={offerings} />

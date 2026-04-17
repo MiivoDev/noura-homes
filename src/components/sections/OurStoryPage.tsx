@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
+import type { CSSProperties } from 'react';
 
-const imgHero = 'https://www.figma.com/api/mcp/asset/2ccf52a7-6701-4612-81eb-ec3cddd27c71';
+const imgHero = '/Our Story.jpg';
 const imgStorySide = 'https://www.figma.com/api/mcp/asset/2206473b-7c72-4035-86a8-f8373bd16580';
 const imgMission = 'https://www.figma.com/api/mcp/asset/077ff84e-238f-4462-8352-12bb7298da5e';
 const imgVision = 'https://www.figma.com/api/mcp/asset/3d0cfd33-339f-46d7-a43a-826846a22a25';
@@ -10,7 +11,7 @@ const imgCulture = '/our-culture.jpg';
 const imgTeam1 = 'https://www.figma.com/api/mcp/asset/088306b4-ae29-42c1-b6da-e70f165056be';
 const imgTeam2 = 'https://www.figma.com/api/mcp/asset/e86d8675-120c-49cf-ad9a-0ad3fcf8a1af';
 const imgTeam3 = 'https://www.figma.com/api/mcp/asset/71be363e-ef54-404b-844d-2dc42856ba5c';
-const imgTeam4 = 'https://www.figma.com/api/mcp/asset/f4e57cc7-9411-4818-bafe-ca92464f52d0';
+const imgTeam4 = 'https://www.figma.com/api/mcp/asset/ba46b1a3-4716-4a3f-9c29-137a4fd6a40d';
 const imgTeam5 = 'https://www.figma.com/api/mcp/asset/60f114ec-4055-4e7c-a018-385e13d54571';
 const imgTeam6 = 'https://www.figma.com/api/mcp/asset/d9b5513d-22cf-4d23-9825-bae180db0825';
 const imgCta = 'https://www.figma.com/api/mcp/asset/fdf8d9f4-f0c2-4620-a66f-dd459fd45d17';
@@ -41,6 +42,10 @@ const team = [
     name: 'Asana Askarian',
     role: 'Vice President Of Operations',
     image: imgTeam4,
+    imageStyle: {
+      transform: 'scale(1.02)',
+      objectPosition: 'center 18%',
+    } as CSSProperties,
     description:
       'Growing up in a family immersed in construction, Asana developed an early passion for building and operations. Today, she brings strong execution, innovation, and process discipline to Noura Homes, helping maintain quality and efficiency across projects while continuing the family’s commitment to excellence.\n\nHer focus on systems, delivery, and team coordination plays a key role in keeping projects on schedule and aligned with the premium standards clients expect from Noura.',
   },
@@ -63,11 +68,11 @@ const team = [
 export default function OurStoryPage() {
   return (
     <div className="bg-background">
-      <section id="home" className="relative min-h-[900px] overflow-hidden">
-        <img src={imgHero} alt="Our story hero" className="absolute inset-0 h-full w-full object-cover" />
+      <section id="home" className="relative min-h-[900px] pt-[82px] overflow-hidden">
+        <img src={imgHero} alt="Our story hero" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 mx-auto flex min-h-[900px] w-full max-w-[1600px] items-center justify-center px-8 lg:px-16 pt-[82px]">
+        <div className="relative z-10 mx-auto flex min-h-[818px] w-full max-w-[1600px] items-center justify-center px-8 lg:px-16">
           <h1 className="max-w-[612px] text-center font-display text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
             A Family Legacy of Craftsmanship, Luxury, and Trust
           </h1>
@@ -207,7 +212,12 @@ export default function OurStoryPage() {
           {team.map((member, index) => (
             <article key={`${member.name}-${index}`} className="flex flex-col items-center gap-6 text-center text-white">
               <div className="relative h-[452px] w-full overflow-hidden group">
-                <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top" />
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className={`h-full w-full object-cover object-top ${member.imageClassName ?? ''}`}
+                  style={member.imageStyle}
+                />
                 <div className="absolute inset-0 translate-y-full bg-primary/92 px-5 py-5 text-left transition-transform duration-300 ease-out group-hover:translate-y-0 overflow-y-auto">
                   <div className="space-y-3 text-[14px] leading-[1.5] text-white/95">
                     {member.description.split('\n\n').map((paragraph, i) => (
@@ -231,8 +241,8 @@ export default function OurStoryPage() {
         </div>
       </section>
 
-      <section className="w-full h-[600px] relative overflow-hidden">
-        <img src={imgCulture} alt="Our culture" className="absolute inset-0 h-full w-full object-cover object-[center_28%]" />
+      <section className="w-full h-[600px] relative overflow-hidden bg-black">
+        <img src={imgCulture} alt="Our culture" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] items-center justify-center px-8 lg:px-16">
           <div className="max-w-[648px] text-center text-white">

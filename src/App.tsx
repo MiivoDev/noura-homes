@@ -26,6 +26,7 @@ import HouseRenovationsPage from './components/sections/HouseRenovationsPage';
 import ServiceAreasPage from './components/sections/ServiceAreasPage';
 import TestimonialsPage from './components/sections/TestimonialsPage';
 import FaqPage from './components/sections/FaqPage';
+import MarbleHillPage from './components/sections/MarbleHillPage';
 import Footer from './components/layout/Footer';
 
 export default function App() {
@@ -46,6 +47,7 @@ export default function App() {
   const isServiceAreasPage = currentPath === '/services/service-areas';
   const isTestimonialsPage = currentPath === '/testimonials';
   const isFaqPage = currentPath === '/faq';
+  const isMarbleHillPage = currentPath === '/projects/current/marble-hill';
 
   if (isOurStoryPage) {
     return (
@@ -194,6 +196,20 @@ export default function App() {
         <SmoothScroll>
           <main>
             <FaqPage />
+          </main>
+          <Footer />
+        </SmoothScroll>
+      </div>
+    );
+  }
+
+  if (isMarbleHillPage) {
+    return (
+      <div className="min-h-screen bg-background text-text-dark font-sans selection:bg-primary selection:text-white">
+        <Navbar />
+        <SmoothScroll>
+          <main>
+            <MarbleHillPage />
           </main>
           <Footer />
         </SmoothScroll>

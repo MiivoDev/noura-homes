@@ -5,6 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 const projects = [
   {
     title: "Marble Hill",
+    href: "/projects/current/marble-hill",
     images: [
       "/Marble%20Hill.png",
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80",
@@ -15,6 +16,7 @@ const projects = [
   },
   {
     title: "Emerald Ridge",
+    href: "#",
     images: [
       "/Emerald%20Ridge.png",
       "https://images.unsplash.com/photo-1600607687931-ce50026a5ce8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80",
@@ -25,6 +27,7 @@ const projects = [
   },
   {
     title: "The Summit",
+    href: "#",
     images: [
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80",
@@ -51,7 +54,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
 
   return (
     <div ref={ref} className="w-[85vw] md:w-[60vw] lg:w-[62vw] flex-shrink-0 group snap-start">
-      <div className="relative h-[38vh] md:h-[42vh] lg:h-[46vh] overflow-hidden mb-4">
+      <a href={project.href} className="block relative h-[38vh] md:h-[42vh] lg:h-[46vh] overflow-hidden mb-4 cursor-pointer">
         {project.images.map((img, idx) => (
           <img
             key={idx}
@@ -83,7 +86,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
             />
           ))}
         </div>
-      </div>
+      </a>
       
       {/* Content below image */}
       <div className="border-t border-primary/20 pt-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -91,7 +94,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           {project.description}
         </p>
         <a
-          href="#"
+          href={project.href}
           className="inline-flex items-center gap-2 text-primary font-medium tracking-wide hover:text-accent transition-colors pb-1 border-b border-primary hover:border-accent whitespace-nowrap"
         >
           See Project

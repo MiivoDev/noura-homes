@@ -1,7 +1,7 @@
 import Awards from './Awards';
 import Associations from './Associations';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/88e7d7e6-066a-46f6-b1fa-a602c79a0ef1';
+const heroImage = '/Awards page.jpg';
 const communityImage = 'https://www.figma.com/api/mcp/asset/59158fca-ae64-4ba2-85c7-ebd662322159';
 
 const charityLogos = [
@@ -25,7 +25,26 @@ const charityLogos = [
 ];
 
 export default function AwardsAssociationsPage() {
-  const displayedCharityLogos = charityLogos.slice(0, 14);
+  const charityLinks = [
+    'https://coquitlamfoundation.com/donate/',
+    'https://www.coquitlamfirefighterscharity.com/donate.html',
+    'https://talithakoumsociety.org/donate/',
+    'https://www.wlaadanacs.com/home',
+    'https://give-can.keela.co/embed/t8WPftooxbzkDZNdw',
+    'https://www.canadahelps.org/en/charities/kinsight/',
+    'https://sharesociety.ca/donate-to-share',
+    'https://www.newviewsociety.org/get-involved/make-a-donation/',
+    'https://jabc.my.site.com/s/donate-now',
+    'https://www.bcchildrens.ca/about-us/donate',
+    'https://www.redcross.ca/active-responses?form=204MWF&recurring=once',
+    'https://www.coquitlamfirefighterscharity.com/donate.html',
+    'https://www.sd43.bc.ca/School/smilingcreek/Pages/default.aspx#/=',
+    'https://www.meadowridge.bc.ca/',
+  ];
+  const displayedCharityLogos = charityLogos.slice(0, 14).map((logo, index) => ({
+    logo,
+    href: charityLinks[index] ?? '#',
+  }));
   const charityLogosRow1 = displayedCharityLogos.slice(0, 7);
   const charityLogosRow2 = displayedCharityLogos.slice(7, 14);
 
@@ -74,16 +93,20 @@ export default function AwardsAssociationsPage() {
           </h2>
           <div className="space-y-6 md:space-y-8">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 items-center justify-items-center">
-              {charityLogosRow1.map((logo, index) => (
+              {charityLogosRow1.map(({ logo, href }, index) => (
                 <div key={`row1-${index}`} className="w-full h-[80px] flex items-center justify-center">
-                  <img src={logo} alt="Community partner logo" className="max-h-[72px] w-auto object-contain" />
+                  <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center hover:opacity-90 transition-opacity">
+                    <img src={logo} alt="Community partner logo" className="max-h-[72px] w-auto object-contain" />
+                  </a>
                 </div>
               ))}
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 items-center justify-items-center">
-              {charityLogosRow2.map((logo, index) => (
+              {charityLogosRow2.map(({ logo, href }, index) => (
                 <div key={`row2-${index}`} className="w-full h-[80px] flex items-center justify-center">
-                  <img src={logo} alt="Community partner logo" className="max-h-[72px] w-auto object-contain" />
+                  <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center hover:opacity-90 transition-opacity">
+                    <img src={logo} alt="Community partner logo" className="max-h-[72px] w-auto object-contain" />
+                  </a>
                 </div>
               ))}
             </div>
