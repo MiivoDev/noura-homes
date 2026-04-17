@@ -7,9 +7,3 @@ coverage/
 .env*
 !.env.example
 
-# Large media files
-public/*.mp4
-public/*.mov
-public/*.avi
-public/*.mkv
-
