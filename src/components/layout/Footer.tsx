@@ -16,39 +16,58 @@ export default function Footer() {
 
             <div className="flex items-center gap-2.5">
               <a
-                href="#"
+                href="https://www.facebook.com/NouraCustomHomes"
+                target="_blank"
+                rel="nofollow noreferrer"
                 aria-label="Facebook"
                 className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
               >
                 <img src="/Facebook.svg" alt="" aria-hidden="true" className="size-full object-contain" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/noura.homes/"
+                target="_blank"
+                rel="nofollow noreferrer"
                 aria-label="Instagram"
                 className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
               >
-                <img src="/Google.svg" alt="" aria-hidden="true" className="size-full object-contain" />
+                <img src="/Instagram.svg" alt="" aria-hidden="true" className="size-full object-contain" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/noura-construction/"
+                target="_blank"
+                rel="nofollow noreferrer"
                 aria-label="LinkedIn"
                 className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
               >
                 <img src="/Linkedin.svg" alt="" aria-hidden="true" className="size-full object-contain" />
               </a>
               <a
-                href="#"
-                aria-label="X"
+                href="https://x.com/teamnoura"
+                target="_blank"
+                rel="nofollow noreferrer"
+                aria-label="X (Twitter)"
                 className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
               >
                 <img src="/Twitter.svg" alt="" aria-hidden="true" className="size-full object-contain" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@nourahomes1240"
+                target="_blank"
+                rel="nofollow noreferrer"
                 aria-label="YouTube"
                 className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
               >
                 <img src="/Youtube.svg" alt="" aria-hidden="true" className="size-full object-contain" />
+              </a>
+              <a
+                href="https://goo.gl/maps/7xGbVKmpyiVszKQm9"
+                target="_blank"
+                rel="nofollow noreferrer"
+                aria-label="Google Maps"
+                className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
+              >
+                <img src="/Google.svg" alt="" aria-hidden="true" className="size-full object-contain" />
               </a>
             </div>
           </div>

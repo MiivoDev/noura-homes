@@ -110,17 +110,23 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-3 md:gap-4">
-            <a href="#" aria-label="Facebook" className="opacity-100 hover:opacity-80 transition-opacity">
+            <a href="https://www.facebook.com/NouraCustomHomes" target="_blank" rel="nofollow noreferrer" aria-label="Facebook" className="opacity-100 hover:opacity-80 transition-opacity">
               <img src="/Facebook.svg" alt="Facebook" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
-            <a href="#" aria-label="LinkedIn" className="opacity-100 hover:opacity-80 transition-opacity">
+            <a href="https://www.instagram.com/noura.homes/" target="_blank" rel="nofollow noreferrer" aria-label="Instagram" className="opacity-100 hover:opacity-80 transition-opacity">
+              <img src="/Instagram.svg" alt="Instagram" className="w-6 h-6 md:w-7 md:h-7" />
+            </a>
+            <a href="https://www.linkedin.com/company/noura-construction/" target="_blank" rel="nofollow noreferrer" aria-label="LinkedIn" className="opacity-100 hover:opacity-80 transition-opacity">
               <img src="/Linkedin.svg" alt="LinkedIn" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
-            <a href="#" aria-label="X" className="opacity-100 hover:opacity-80 transition-opacity">
+            <a href="https://x.com/teamnoura" target="_blank" rel="nofollow noreferrer" aria-label="X (Twitter)" className="opacity-100 hover:opacity-80 transition-opacity">
               <img src="/Twitter.svg" alt="X" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
-            <a href="#" aria-label="YouTube" className="opacity-100 hover:opacity-80 transition-opacity">
+            <a href="https://www.youtube.com/@nourahomes1240" target="_blank" rel="nofollow noreferrer" aria-label="YouTube" className="opacity-100 hover:opacity-80 transition-opacity">
               <img src="/Youtube.svg" alt="YouTube" className="w-6 h-6 md:w-7 md:h-7" />
+            </a>
+            <a href="https://goo.gl/maps/7xGbVKmpyiVszKQm9" target="_blank" rel="nofollow noreferrer" aria-label="Google Maps" className="opacity-100 hover:opacity-80 transition-opacity">
+              <img src="/Google.svg" alt="Google Maps" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
           </div>
         </div>
