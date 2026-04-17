@@ -114,7 +114,7 @@ export default function Navbar() {
               <img src="/Facebook.svg" alt="Facebook" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
             <a href="https://www.instagram.com/noura.homes/" target="_blank" rel="nofollow noreferrer" aria-label="Instagram" className="opacity-100 hover:opacity-80 transition-opacity">
-              <img src="/Instagram.svg" alt="Instagram" className="w-6 h-6 md:w-7 md:h-7" />
+              <img src="/Google.svg" alt="Instagram" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
             <a href="https://www.linkedin.com/company/noura-construction/" target="_blank" rel="nofollow noreferrer" aria-label="LinkedIn" className="opacity-100 hover:opacity-80 transition-opacity">
               <img src="/Linkedin.svg" alt="LinkedIn" className="w-6 h-6 md:w-7 md:h-7" />
@@ -126,7 +126,7 @@ export default function Navbar() {
               <img src="/Youtube.svg" alt="YouTube" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
             <a href="https://goo.gl/maps/7xGbVKmpyiVszKQm9" target="_blank" rel="nofollow noreferrer" aria-label="Google Maps" className="opacity-100 hover:opacity-80 transition-opacity">
-              <img src="/Google.svg" alt="Google Maps" className="w-6 h-6 md:w-7 md:h-7" />
+              <img src="/GoogleMaps.svg" alt="Google Maps" className="w-6 h-6 md:w-7 md:h-7" />
             </a>
           </div>
         </div>

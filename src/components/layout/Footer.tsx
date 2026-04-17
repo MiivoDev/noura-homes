@@ -31,7 +31,7 @@ export default function Footer() {
                 aria-label="Instagram"
                 className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
               >
-                <img src="/Instagram.svg" alt="" aria-hidden="true" className="size-full object-contain" />
+                <img src="/Google.svg" alt="" aria-hidden="true" className="size-full object-contain" />
               </a>
               <a
                 href="https://www.linkedin.com/company/noura-construction/"
@@ -67,7 +67,7 @@ export default function Footer() {
                 aria-label="Google Maps"
                 className="inline-flex size-8 shrink-0 items-center justify-center rounded-full overflow-hidden hover:opacity-[0.85] transition-opacity"
               >
-                <img src="/Google.svg" alt="" aria-hidden="true" className="size-full object-contain" />
+                <img src="/GoogleMaps.svg" alt="" aria-hidden="true" className="size-full object-contain" />
               </a>
             </div>
           </div>
