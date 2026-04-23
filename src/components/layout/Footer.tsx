@@ -89,12 +89,7 @@ export default function Footer() {
                 <MapPin className="size-5 shrink-0" strokeWidth={1.6} />
                 <p className="text-base leading-6">Location</p>
               </div>
-              <a
-                href="https://www.nourahomes.com/pages/contact"
-                target="_blank"
-                rel="noreferrer"
-                className="text-base leading-6 underline underline-offset-2"
-              >
+              <a href="#contact" className="text-base leading-6 underline underline-offset-2">
                 Suite 201 - 3387 David Ave, Coquitlam, BC V3E 0K4
               </a>
             </div>

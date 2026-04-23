@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
-/** First embed on nourahomes.com/pages/our-projects/past-projects/aura-phase-1 (page also lists two more testimonial videos below) */
+/** First embed on Noura Homes legacy page (Aura Phase 1; page also lists two more testimonial videos below). */
 const AURA_PHASE_1_YOUTUBE_VIDEO_ID = '_j0ohUlzef4';
 
 const heroImage = 'https://www.figma.com/api/mcp/asset/790fb372-8045-41ec-9b0e-502f9b247a23';

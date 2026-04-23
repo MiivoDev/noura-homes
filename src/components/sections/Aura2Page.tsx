@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
-/** Virtual tour from legacy page: nourahomes.com/pages/our-projects/past-projects/aura-2 */
+/** Virtual tour from Noura Homes legacy page (Aura 2). */
 const AURA_2_YOUTUBE_VIDEO_ID = 'tRwsI0ItImU';
 
 const heroImage = 'https://www.figma.com/api/mcp/asset/3c050fd7-8c88-4dcd-9980-b5844927f414';

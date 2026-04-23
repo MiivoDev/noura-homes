@@ -25,7 +25,7 @@ const propertyPlanImages = [
 ];
 
 const MARBLE_HILL_FOLDER = 'Marble Hill';
-/** 3rd tour on nourahomes.com/pages/virtual-tours/ — 7138 Marble Hill Road */
+/** Third tour on the Noura Homes legacy virtual tours page — 7138 Marble Hill Road. */
 const marbleHillVirtualTourUrl = 'https://my.matterport.com/show/?m=tYVmwGvWnxz';
 const marbleHillVirtualTourThumb = `/${encodeURIComponent(MARBLE_HILL_FOLDER)}/virtual-tour.webp?v=20260423a`;
 
