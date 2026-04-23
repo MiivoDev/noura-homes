@@ -99,7 +99,10 @@ export default function Projects() {
   };
 
   return (
-    <section className="py-6 md:py-10 bg-[#FDFBF7] overflow-hidden">
+    <section
+      id="our-projects"
+      className="scroll-mt-[120px] py-6 md:py-10 bg-[#FDFBF7] overflow-hidden"
+    >
       <div className="max-w-[1600px] mx-auto px-5 lg:px-16">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-display leading-[1.2] tracking-[-0.48px] text-primary">

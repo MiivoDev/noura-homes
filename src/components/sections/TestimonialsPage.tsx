@@ -60,6 +60,8 @@ function FeaturedRow({ item }: { item: FeaturedTestimonial }) {
         <TestimonialVideoMedia
           image={item.image}
           author={item.author}
+          videoSrc={item.videoSrc}
+          startSeconds={item.startSeconds}
           youtubeId={item.youtubeId}
           youtubeStartSeconds={item.youtubeStartSeconds}
           className="h-[240px] w-full min-h-0 sm:h-[300px] md:h-[380px] lg:h-[465px]"

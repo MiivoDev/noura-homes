@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
@@ -23,6 +23,11 @@ const propertyPlanImages = [
   'https://www.figma.com/api/mcp/asset/b21fd692-1a8b-4c0c-85cf-a88616737d86',
   'https://www.figma.com/api/mcp/asset/18b7c609-4330-4267-a1ef-69b343455110',
 ];
+
+const MARBLE_HILL_FOLDER = 'Marble Hill';
+/** 3rd tour on nourahomes.com/pages/virtual-tours/ — 7138 Marble Hill Road */
+const marbleHillVirtualTourUrl = 'https://my.matterport.com/show/?m=tYVmwGvWnxz';
+const marbleHillVirtualTourThumb = `/${encodeURIComponent(MARBLE_HILL_FOLDER)}/virtual-tour.webp?v=20260423a`;
 
 const galleryImages = [
   '/Marble Hill/1092_4.jpg',
@@ -223,6 +228,39 @@ export default function MarbleHillPage() {
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 lg:py-14">
+        <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.48px] text-primary text-center">
+            Virtual Tour
+          </h2>
+          <div className="mt-8 grid grid-cols-1 gap-6">
+            <a
+              href={marbleHillVirtualTourUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open virtual tour: 7138 Marble Hill Road"
+              className="group relative block h-[220px] w-full overflow-hidden border border-primary/10 bg-[#0c1320] md:h-[300px] lg:h-[330px]"
+            >
+              <img
+                src={marbleHillVirtualTourThumb}
+                alt="7138 Marble Hill Road virtual tour thumbnail"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/15 to-primary/50" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="inline-flex items-center gap-3 border border-white/60 bg-black/25 px-5 py-3 text-white backdrop-blur-[2px]">
+                  <span className="font-medium tracking-[0.04em] uppercase text-[12px] md:text-[13px] lg:text-[14px]">
+                    7138 MARBLE HILL ROAD
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5" />
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>

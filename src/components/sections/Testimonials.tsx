@@ -45,11 +45,13 @@ export default function Testimonials() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="relative w-full aspect-[16/10] bg-gray-200"
+            key={activeIndex}
           >
             <TestimonialVideoMedia
-              key={activeIndex}
               image={activeTestimonial.image}
               author={activeTestimonial.author}
+              videoSrc={activeTestimonial.videoSrc}
+              startSeconds={activeTestimonial.startSeconds}
               youtubeId={activeTestimonial.youtubeId}
               youtubeStartSeconds={activeTestimonial.youtubeStartSeconds}
               className="h-full w-full"

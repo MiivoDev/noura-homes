@@ -17,7 +17,7 @@ const slides = [
       "Discover Marble Hill, our newest residential community thoughtfully designed for elevated family living, timeless architecture, and modern comfort."
   },
   {
-    video: "/ Emerald Ridge mp4.mp4",
+    video: "/Emerald Ridge mp4.mp4",
     chip: "Upcoming project",
     title: "Emerald Ridge - New Luxury Stays.",
     description:
@@ -54,6 +54,7 @@ export default function Hero() {
         >
           <div className="absolute inset-0 bg-black/30 z-10" />
           <video
+            key={slides[currentIndex].video}
             src={slides[currentIndex].video}
             autoPlay
             muted

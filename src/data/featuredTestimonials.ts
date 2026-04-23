@@ -6,8 +6,19 @@ export type FeaturedTestimonial = {
   role: string;
   image: string;
   imageLeft: boolean;
-  /** When set, play button loads this YouTube embed (poster uses `image`). */
+  /**
+   * YouTube id for embed. Keep this for reliable playback, or add `videoSrc` (self‑hosted) and
+   * remove this when the MP4 exists in `public/`.
+   */
   youtubeId?: string;
+  /** YouTube & embed start time, or use with `videoSrc` + native `<video>`. */
+  startSeconds?: number;
+  /**
+   * Self‑hosted when you are ready: place file in `public/` and remove `youtubeId` so the native
+   * player is used. Example: `/testimonials/alex.mp4`
+   */
+  videoSrc?: string;
+  /** @deprecated Use `startSeconds` */
   youtubeStartSeconds?: number;
 };
 
@@ -21,7 +32,7 @@ export const featuredTestimonials: FeaturedTestimonial[] = [
     image: 'https://www.figma.com/api/mcp/asset/b6b9954a-ca0c-449f-8fa1-28402cf16dfe',
     imageLeft: true,
     youtubeId: '9bDtZi8wFMA',
-    youtubeStartSeconds: 20,
+    startSeconds: 20,
   },
   {
     quoteTitle: 'A Seamless, Fun Experience with Noura Homes',
@@ -42,6 +53,6 @@ export const featuredTestimonials: FeaturedTestimonial[] = [
     image: 'https://www.figma.com/api/mcp/asset/e60b567b-9972-4307-bd19-78d5b37b059c',
     imageLeft: true,
     youtubeId: '_j0ohUlzef4',
-    youtubeStartSeconds: 13,
+    startSeconds: 13,
   },
 ];

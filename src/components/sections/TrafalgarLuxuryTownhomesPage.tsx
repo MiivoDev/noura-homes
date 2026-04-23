@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { MediaPlayer, MediaProvider } from '@vidstack/react';
+import { DefaultVideoLayout, defaultLayoutIcons } from '@vidstack/react/player/layouts/default';
 import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
@@ -132,13 +134,16 @@ export default function TrafalgarLuxuryTownhomesPage() {
           </h2>
           <div className="mt-8 w-full max-w-[988px] mx-auto aspect-video bg-black/5">
             {videoPlaying ? (
-              <iframe
+              <MediaPlayer
                 title="Trafalgar Luxury Townhomes virtual tour"
-                src={`https://www.youtube.com/embed/${TRAFALGAR_YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`}
+                src={`youtube/${TRAFALGAR_YOUTUBE_VIDEO_ID}`}
                 className="h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+                autoPlay
+                playsInline
+              >
+                <MediaProvider />
+                <DefaultVideoLayout icons={defaultLayoutIcons} />
+              </MediaPlayer>
             ) : (
               <button
                 type="button"
