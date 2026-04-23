@@ -1,42 +1,9 @@
-import { Play } from 'lucide-react';
+import { featuredTestimonials, type FeaturedTestimonial } from '@/src/data/featuredTestimonials';
+import { cn } from '@/src/lib/utils';
+import { TestimonialVideoMedia } from './TestimonialVideoMedia';
 
 const heroImage = '/testimonials-hero-force-refresh-20260416.png';
 const ctaImage = 'https://www.figma.com/api/mcp/asset/0dddc23f-4fba-4322-b17b-c4adbe41ecd7';
-
-type FeaturedTestimonial = {
-  quoteTitle: string;
-  quoteBody: string;
-  author: string;
-  image: string;
-  imageLeft: boolean;
-};
-
-const featuredTestimonials: FeaturedTestimonial[] = [
-  {
-    quoteTitle: 'Turning a Vision into a Reality with Unmatched Quality',
-    quoteBody:
-      'What drew us to Noura Homes was the attention to detail and the ability to customize our home exactly how we wanted it. From initial design to final touches, the team was supportive throughout. They did not just build a house; they built our home. The craftsmanship and care made all the difference.',
-    author: 'The Smith Family',
-    image: 'https://www.figma.com/api/mcp/asset/b6b9954a-ca0c-449f-8fa1-28402cf16dfe',
-    imageLeft: true,
-  },
-  {
-    quoteTitle: 'A Seamless, Fun Experience with Noura Homes',
-    quoteBody:
-      'Noura stood out among other builders, and when we walked into their homes, we felt the high quality immediately. Despite hearing horror stories about building, the team made the process easy and smooth by explaining every step. We incorporated every wish we had, and they delivered on time. They treated us like family, and we would definitely work with them again.',
-    author: 'Sebastian and Stephanie',
-    image: 'https://www.figma.com/api/mcp/asset/2d42a8e7-6e39-4af4-9f9c-67e244107863',
-    imageLeft: false,
-  },
-  {
-    quoteTitle: 'One-Minute Decision.',
-    quoteBody:
-      'This was the first house we ever built, and everything was new to us. Noura Construction walked us through the entire process and was incredibly helpful. We saw the quality of their work on another house, and it was a one-minute decision to go with them. Now, it truly feels like our home, like putting on a shoe that perfectly fits. I would absolutely recommend Noura Homes.',
-    author: 'Alex',
-    image: 'https://www.figma.com/api/mcp/asset/e60b567b-9972-4307-bd19-78d5b37b059c',
-    imageLeft: true,
-  },
-];
 
 const ownerMessages = [
   {
@@ -82,28 +49,36 @@ const ownerMessages = [
 ];
 
 function FeaturedRow({ item }: { item: FeaturedTestimonial }) {
-  const media = (
-    <div className="relative w-full lg:w-[57%] h-[320px] lg:h-[465px] overflow-hidden">
-      <img src={item.image} alt={item.author} className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-black/20" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-14 w-14 lg:h-20 lg:w-20 rounded-full border border-white/70 bg-white/20 backdrop-blur-[1px] flex items-center justify-center">
-          <Play className="h-7 w-7 lg:h-10 lg:w-10 text-white ml-1" fill="currentColor" />
-        </div>
+  return (
+    <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12">
+      <div
+        className={cn(
+          'w-full lg:w-[57%] order-1',
+          item.imageLeft ? 'lg:order-1' : 'lg:order-2',
+        )}
+      >
+        <TestimonialVideoMedia
+          image={item.image}
+          author={item.author}
+          youtubeId={item.youtubeId}
+          youtubeStartSeconds={item.youtubeStartSeconds}
+          className="h-[240px] w-full min-h-0 sm:h-[300px] md:h-[380px] lg:h-[465px]"
+          variant="featured"
+        />
+      </div>
+      <div
+        className={cn(
+          'w-full text-primary lg:w-[40%] order-2',
+          item.imageLeft ? 'lg:order-2' : 'lg:order-1',
+        )}
+      >
+        <img src="/mdi_comma.svg" alt="" aria-hidden="true" className="h-8 w-8 sm:h-10 sm:w-10" />
+        <h3 className="mt-2 text-[20px] font-medium leading-[1.5] sm:text-[22px]">{item.quoteTitle}</h3>
+        <p className="mt-4 text-[15px] leading-[1.5] text-primary/95 sm:text-[16px]">{item.quoteBody}</p>
+        <p className="mt-5 text-[26px] leading-[1.3] sm:mt-6 sm:text-[30px]">{item.author}</p>
       </div>
     </div>
   );
-
-  const text = (
-    <div className="w-full lg:w-[40%] text-primary">
-      <img src="/mdi_comma.svg" alt="" aria-hidden="true" className="h-10 w-10" />
-      <h3 className="mt-2 text-[22px] font-medium leading-[1.5]">{item.quoteTitle}</h3>
-      <p className="mt-4 text-[16px] leading-[1.5] text-primary/95">{item.quoteBody}</p>
-      <p className="mt-6 text-[30px] leading-[1.3]">{item.author}</p>
-    </div>
-  );
-
-  return <div className="flex flex-col lg:flex-row items-center justify-between gap-12">{item.imageLeft ? <>{media}{text}</> : <>{text}{media}</>}</div>;
 }
 
 export default function TestimonialsPage() {
@@ -111,15 +86,18 @@ export default function TestimonialsPage() {
 
   return (
     <div className="bg-background">
-      <section className="relative min-h-[820px] pt-[82px] overflow-hidden">
-        <img
-          src={heroImage}
-          alt="Happy family in their home"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <section className="relative min-h-[480px] overflow-hidden bg-zinc-900 pt-[82px] sm:min-h-[540px] md:min-h-[640px] lg:min-h-[820px]">
+        {/* object-cover: pin to top of photo on small screens so the crop includes max headroom above the family. */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={heroImage}
+            alt="Happy family in their home"
+            className="h-full w-full object-cover object-top sm:object-[50%_14%] md:object-center"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/20" />
-        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[820px] px-8 lg:px-16 flex items-center justify-center">
-          <h1 className="-translate-y-5 font-display text-[46px] md:text-[64px] leading-[1.08] tracking-[-0.6px] text-white text-center">
+        <div className="relative z-10 mx-auto flex min-h-[398px] w-full max-w-[1600px] items-center justify-center px-8 sm:min-h-[458px] md:min-h-[558px] lg:min-h-[738px] lg:px-16">
+          <h1 className="font-display text-[26px] leading-[1.2] tracking-[-0.48px] text-white sm:text-[32px] md:text-[40px] lg:-translate-y-5 lg:text-[48px] text-center [text-wrap:balance] max-w-[20ch] sm:max-w-none">
             What Our Clients Love
           </h1>
         </div>
@@ -127,8 +105,8 @@ export default function TestimonialsPage() {
 
       <section className="bg-background py-16 lg:py-24">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] text-primary text-center">Testimonials</h2>
-          <div className="mt-14 space-y-20">
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] text-primary text-center">Testimonials</h2>
+          <div className="mt-10 space-y-12 sm:mt-12 md:mt-14 md:space-y-16 lg:space-y-20">
             {featuredTestimonials.map((item) => (
               <div key={`${item.author}-${item.quoteTitle}`}>
                 <FeaturedRow item={item} />
@@ -140,14 +118,19 @@ export default function TestimonialsPage() {
 
       <section className="bg-background py-16 lg:py-24">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] text-primary text-center">More Messages from Owners</h2>
-          <div className="mt-12 relative left-1/2 right-1/2 w-screen -ml-[50vw] -mr-[50vw] overflow-hidden">
-            <div className="flex gap-[30px] w-max animate-marquee">
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] text-primary text-center [text-wrap:balance] px-1">
+            More Messages from Owners
+          </h2>
+          <div className="mt-8 sm:mt-10 md:mt-12 relative left-1/2 right-1/2 w-screen -ml-[50vw] -mr-[50vw] overflow-hidden">
+            <div className="flex w-max animate-marquee gap-4 sm:gap-6 md:gap-[30px] pl-4 pr-2 sm:pl-6 sm:pr-4 md:pl-0 md:pr-0">
               {loopingOwnerMessages.map((item, index) => (
-                <article key={`${item.author}-${index}`} className="w-[414px] h-[340px] border border-primary bg-white px-[27px] py-6 flex flex-col shrink-0">
-                  <img src="/mdi_comma.svg" alt="" aria-hidden="true" className="h-5 w-5" />
-                  <p className="mt-3 text-[16px] leading-[1.5] text-primary/95 flex-1 pr-1">{item.body}</p>
-                  <p className="mt-7 text-[24px] leading-[1.4] text-primary">{item.author}</p>
+                <article
+                  key={`${item.author}-${index}`}
+                  className="flex h-[min(300px,70dvh)] w-[min(100vw-2rem,320px)] shrink-0 flex-col border border-primary bg-white px-5 py-5 sm:h-[320px] sm:w-[min(100vw-3rem,380px)] sm:px-[22px] sm:py-6 md:h-[340px] md:w-[414px] md:px-[27px]"
+                >
+                  <img src="/mdi_comma.svg" alt="" aria-hidden="true" className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <p className="mt-2 flex-1 pr-0.5 text-[15px] leading-[1.5] text-primary/95 sm:mt-3 sm:text-[16px]">{item.body}</p>
+                  <p className="mt-4 text-[20px] leading-[1.4] text-primary sm:mt-6 sm:text-[24px]">{item.author}</p>
                 </article>
               ))}
             </div>
@@ -155,13 +138,15 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      <section className="relative min-h-[600px] overflow-hidden">
-        <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
+      <section className="relative min-h-[420px] overflow-hidden sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px]">
+        <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
-          <div className="max-w-[790px] text-center text-white">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
-            <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">
+        <div className="relative z-10 mx-auto flex min-h-[420px] w-full max-w-[1600px] items-center justify-center px-8 py-12 sm:min-h-[500px] sm:py-14 md:min-h-[560px] md:py-16 lg:min-h-[600px] lg:px-16">
+          <div className="w-full max-w-[790px] text-center text-white">
+            <h2 className="font-display text-[24px] leading-[1.2] sm:text-[28px] md:text-[40px] lg:text-[48px] lg:leading-[1.15] [text-wrap:balance]">
+              Your dream home begins with a conversation.
+            </h2>
+            <p className="mt-4 text-[15px] leading-[1.6] md:text-[16px]">
               Whether you&apos;re ready to design a custom home, exploring renovation options, or simply want to learn
               more about our process, our team is here to help. Share your goals and your vision; together, we&apos;ll
               transform your ideas into a home that feels unmistakably yours.

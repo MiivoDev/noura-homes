@@ -7,9 +7,9 @@ export default function LuxuryCustomHomesPage() {
     <div className="bg-background">
       <section className="bg-background">
         <div className="max-w-[1600px] mx-auto min-h-[820px] pt-[82px] grid grid-cols-1 lg:grid-cols-[40%_60%]">
-          <div className="px-8 lg:px-16 py-14 lg:py-24 flex items-center lg:pr-10">
+          <div className="order-2 px-8 lg:order-1 lg:px-16 py-14 lg:py-24 flex items-center lg:pr-10">
             <div className="max-w-[500px]">
-              <h1 className="font-display text-[40px] md:text-[48px] leading-[1.08] tracking-[-0.6px] text-primary">
+              <h1 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">
                 Your Vision, Our Expertise: Crafting Custom Dream Homes
               </h1>
               <p className="mt-4 text-[16px] leading-[1.5] text-primary/90">
@@ -26,7 +26,7 @@ export default function LuxuryCustomHomesPage() {
               </p>
             </div>
           </div>
-          <div className="relative min-h-[420px] lg:min-h-[820px]">
+          <div className="relative order-1 min-h-[420px] lg:order-2 lg:min-h-[820px]">
             <img
               src={heroImage}
               alt="Luxury custom homes hero"
@@ -41,7 +41,7 @@ export default function LuxuryCustomHomesPage() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-[615px_1fr] gap-16 items-center py-16 lg:py-20 px-8 lg:px-16">
           <img src={whyChooseImage} alt="Luxury custom bathroom interior" className="w-full h-full min-h-[360px] object-cover" />
           <div>
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] text-primary mb-6">
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] text-primary mb-6">
               Why Choose Noura Homes
             </h2>
             <div className="space-y-4 text-[16px] leading-[1.5] text-primary">
@@ -71,7 +71,7 @@ export default function LuxuryCustomHomesPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">
               Whether you're ready to design a custom home, exploring renovation options, or simply want to learn more
               about our process, our team is here to help. Share your goals and your vision; together, we’ll transform

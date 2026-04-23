@@ -36,7 +36,7 @@ export default function LeadGen() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-xl text-white"
           >
-            <h2 className="text-[48px] font-display leading-tight mb-6">
+            <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-display leading-[1.2] tracking-[-0.48px] mb-6">
               Discover Your<br />Custom Build Profile
             </h2>
             <p className="text-white/90 text-base md:text-lg leading-relaxed mb-10">

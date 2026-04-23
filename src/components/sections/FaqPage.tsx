@@ -51,7 +51,7 @@ export default function FaqPage() {
         <img src={heroImage} alt="Frequently asked questions hero" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 max-w-[1600px] mx-auto min-h-[820px] px-8 lg:px-16 flex items-center justify-center">
-          <h1 className="font-display text-[46px] md:text-[64px] leading-[1.08] tracking-[-0.6px] text-white text-center">
+          <h1 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white text-center">
             Frequently Asked Questions
           </h1>
         </div>
@@ -85,7 +85,7 @@ export default function FaqPage() {
           </div>
 
           <div className="mt-20 text-center">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">
               Still have questions? Let&apos;s talk.
             </h2>
             <a
@@ -103,7 +103,7 @@ export default function FaqPage() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-[1600px] mx-auto min-h-[520px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">
               Whether you&apos;re ready to design a custom home, exploring renovation options, or simply want to learn
               more about our process, our team is here to help. Share your goals and your vision; together, we&apos;ll

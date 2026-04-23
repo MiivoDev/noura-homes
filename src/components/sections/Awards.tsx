@@ -62,7 +62,7 @@ export default function Awards() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-[40px] md:text-[48px] font-display text-white mb-4">
+            <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-display text-white mb-4">
               Award-Winning Heritage
             </h2>
             <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-[700px] mx-auto">

@@ -13,7 +13,7 @@ export default function Legacy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[48px] font-display leading-[1.1] mb-4 lg:mb-5"
+              className="text-[28px] md:text-[40px] lg:text-[48px] font-display leading-[1.2] tracking-[-0.48px] mb-4 lg:mb-5"
             >
               Your Vision.<br />
               Our Craftsmanship.<br />

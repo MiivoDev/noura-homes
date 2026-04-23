@@ -38,7 +38,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen min-h-[800px] w-full overflow-hidden bg-gray-900">
+    <section
+      id="home"
+      className="relative w-full overflow-hidden bg-gray-900 h-[min(78dvh,720px)] min-h-[480px] sm:min-h-[520px] sm:h-[min(82dvh,780px)] md:h-screen md:min-h-[800px]"
+    >
       {/* Video Carousel Background */}
       <AnimatePresence initial={false}>
         <motion.div
@@ -67,7 +70,7 @@ export default function Hero() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="bg-secondary p-4 md:p-5 lg:p-5 xl:p-6 max-w-[28rem] lg:max-w-[23rem] xl:max-w-[28rem] w-full text-white shadow-2xl min-h-[320px] md:min-h-[360px] lg:min-h-[340px] xl:min-h-[360px] flex flex-col"
+          className="bg-secondary p-4 md:p-5 lg:p-5 xl:p-6 max-w-[28rem] lg:max-w-[23rem] xl:max-w-[28rem] w-full text-white shadow-2xl min-h-[280px] sm:min-h-[300px] md:min-h-[360px] lg:min-h-[340px] xl:min-h-[360px] flex flex-col"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -83,7 +86,7 @@ export default function Hero() {
                   {slides[currentIndex].chip}
                 </span>
               )}
-              <h1 className="text-[34px] md:text-[40px] lg:text-[34px] xl:text-[46px] font-display leading-[1.08] mb-3 md:mb-5 lg:mb-4">
+              <h1 className="text-[28px] md:text-[40px] lg:text-[48px] font-display leading-[1.2] tracking-[-0.48px] mb-3 md:mb-5 lg:mb-4">
                 {slides[currentIndex].title}
               </h1>
               

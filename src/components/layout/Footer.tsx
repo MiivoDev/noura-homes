@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="relative bg-primary text-white overflow-hidden">
-      <div className="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-16 pt-16 lg:pt-[64px] pb-56 md:pb-72 lg:pb-[340px]">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-16 pt-16 lg:pt-[64px] pb-40 sm:pb-48 md:pb-72 lg:pb-[340px]">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:items-start">
           <div className="flex flex-col gap-5">
             <div className="h-14 md:h-16 w-[250px] md:w-[300px]">
@@ -124,12 +124,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="absolute left-0 right-0 bottom-0 h-[170px] md:h-[230px] lg:h-[278px] pointer-events-none">
+      <div className="absolute left-0 right-0 bottom-0 h-[100px] sm:h-[128px] md:h-[230px] lg:h-[278px] pointer-events-none">
         <img
           src="/NOURA.svg"
           alt=""
           aria-hidden="true"
-          className="w-full h-full object-cover object-top"
+          className="h-full w-full object-contain object-bottom object-left md:object-cover md:object-top"
         />
       </div>
     </footer>

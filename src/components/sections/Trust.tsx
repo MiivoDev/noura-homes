@@ -57,7 +57,7 @@ export default function Trust() {
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-[47px]"
           >
-            <h2 className="text-[48px] font-display text-secondary leading-[1.2] tracking-[-0.48px]">
+            <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-display text-secondary leading-[1.2] tracking-[-0.48px]">
               A Tradition of Excellence You Can Trust
             </h2>
             <p className="text-[16px] leading-[1.5] text-primary lg:max-w-[623px]">

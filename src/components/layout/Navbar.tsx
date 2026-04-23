@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Button } from '../ui/Button';
+import { cn } from '@/src/lib/utils';
 import { ChevronDown, ChevronRight, Menu, Phone, X } from 'lucide-react';
 
 type NavSubItem = {
@@ -53,34 +54,43 @@ const navItems: NavItem[] = [
         href: '/projects/current/marble-hill',
         subItems: [
           { label: 'Marble Hill', href: '/projects/current/marble-hill' },
-          { label: 'Emerald Ridge', href: '#emerald-ridge' },
-          { label: 'Multi-Family Homes', href: '#multi-family-homes' }
+          { label: 'Emerald Ridge', href: '/projects/current/emerald-ridge' },
+          { label: 'Multi-Family Homes', href: '/projects/current/multi-family-homes' }
         ]
       },
       {
         label: 'Past Projects',
         href: '#past-projects',
         subItems: [
-          { label: 'Custom Homes', href: '#custom-homes' },
-          { label: 'Aura 2', href: '#aura-2' },
-          { label: 'Trafalgar Luxury Townhomes', href: '#trafalgar-luxury-townhomes' },
-          { label: 'Platinum Rose Estates', href: '#platinum-rose-estates' },
-          { label: 'Noura Estates 1 & 2', href: '#noura-estates-1-and-2' },
-          { label: 'Aura Phase 1', href: '#aura-phase-1' },
-          { label: 'Highland', href: '#highland' }
+          { label: 'Custom Homes', href: '/projects/past/custom-homes' },
+          { label: 'Aura 2', href: '/projects/past/aura-2' },
+          { label: 'Trafalgar Luxury Townhomes', href: '/projects/past/trafalgar-luxury-townhomes' },
+          { label: 'Platinum Rose Estates', href: '/projects/past/platinum-rose-estates' },
+          { label: 'Noura Estates 1 & 2', href: '/projects/past/noura-estates-1-and-2' },
+          { label: 'Aura Phase 1', href: '/projects/past/aura-phase-1' },
+          { label: 'Highland', href: '/projects/past/highland' }
         ]
       },
-      { label: 'Coming Soon', href: '#coming-soon' }
+      { label: 'Coming Soon', href: '/projects/coming-soon' }
     ]
   },
   { label: 'Testimonials', href: '/testimonials' },
-  { label: 'Blogs', href: '#blogs' }
+  { label: 'Blogs', href: '/blogs' }
 ];
 
 export default function Navbar() {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileOpenTop, setMobileOpenTop] = useState<Record<string, boolean>>({});
+  const [mobileOpenNested, setMobileOpenNested] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setMobileOpenTop({});
+      setMobileOpenNested({});
+    }
+  }, [isMobileMenuOpen]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
@@ -204,8 +214,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Button variant="default" className="hidden md:inline-flex">
-          Contact Us
+        <Button variant="default" className="hidden md:inline-flex" asChild>
+          <a href="/contact">Contact Us</a>
         </Button>
 
         <button
@@ -218,52 +228,106 @@ export default function Navbar() {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-sm">
-          <div className="max-w-[1600px] mx-auto px-8 py-4 space-y-2">
-            {navItems.map((item) => (
-              <div key={item.label} className="py-1">
-                <a
-                  href={item.href}
-                  className="block text-sm font-medium text-gray-700"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-                {item.children && (
-                  <div className="mt-2 pl-3 border-l border-gray-200 space-y-1">
-                    {item.children.map((child) => (
-                      <div key={child.label} className="space-y-1">
-                        <a
-                          href={child.href}
-                          className="block text-sm text-gray-600"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {child.label}
-                        </a>
-                        {child.subItems && (
-                          <div className="pl-3 border-l border-gray-200 space-y-1">
-                            {child.subItems.map((subItem) => (
-                              <a
-                                key={subItem.label}
-                                href={subItem.href}
-                                className="block text-sm text-gray-500"
-                                onClick={() => setIsMobileMenuOpen(false)}
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-sm max-h-[min(70dvh,520px)] overflow-y-auto">
+          <div className="max-w-[1600px] mx-auto px-8 pt-2 pb-8">
+            {navItems.map((item) => {
+              if (!item.children) {
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="block border-b border-gray-100 py-3 text-sm font-medium text-gray-700"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
+
+              const isTopOpen = mobileOpenTop[item.label];
+              return (
+                <div key={item.label} className="border-b border-gray-100 last:border-b-0">
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between gap-2 py-3 text-left text-sm font-medium text-gray-700"
+                    onClick={() =>
+                      setMobileOpenTop((prev) => ({ ...prev, [item.label]: !prev[item.label] }))
+                    }
+                    aria-expanded={isTopOpen}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      className={cn(
+                        'h-4 w-4 shrink-0 text-gray-500 transition-transform duration-200',
+                        isTopOpen && 'rotate-180',
+                      )}
+                    />
+                  </button>
+                  {isTopOpen && (
+                    <div className="space-y-0.5 border-l-2 border-gray-100 pl-3 pb-3 ml-0.5">
+                      {item.children.map((child) => {
+                        const hasNested = child.subItems && child.subItems.length > 0;
+                        if (hasNested) {
+                          const nestKey = `${item.label}::${child.label}`;
+                          const isNestedOpen = mobileOpenNested[nestKey];
+                          return (
+                            <div key={child.label} className="pt-0.5">
+                              <button
+                                type="button"
+                                className="flex w-full items-center justify-between gap-2 py-2 text-left text-sm text-gray-700"
+                                onClick={() =>
+                                  setMobileOpenNested((prev) => ({
+                                    ...prev,
+                                    [nestKey]: !prev[nestKey],
+                                  }))
+                                }
+                                aria-expanded={isNestedOpen}
                               >
-                                {subItem.label}
-                              </a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                                {child.label}
+                                <ChevronDown
+                                  className={cn(
+                                    'h-3.5 w-3.5 shrink-0 text-gray-400 transition-transform duration-200',
+                                    isNestedOpen && 'rotate-180',
+                                  )}
+                                />
+                              </button>
+                              {isNestedOpen && (
+                                <div className="ml-1 space-y-0.5 border-l border-gray-200 pl-2.5 pb-1">
+                                  {child.subItems!.map((subItem) => (
+                                    <a
+                                      key={subItem.label}
+                                      href={subItem.href}
+                                      className="block py-1.5 text-sm text-gray-600"
+                                      onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                      {subItem.label}
+                                    </a>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        }
+                        return (
+                          <a
+                            key={child.label}
+                            href={child.href}
+                            className="block py-2 text-sm text-gray-600 first:pt-0"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {child.label}
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
 
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center h-10 px-5 bg-secondary text-white text-sm font-medium"
+              href="/contact"
+              className="mt-3 inline-flex w-full items-center justify-center h-10 px-5 bg-secondary text-white text-sm font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us

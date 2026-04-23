@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
+import { ProjectPageHero } from './ProjectPageHero';
 
 const heroImage = 'https://www.figma.com/api/mcp/asset/4cf69048-bdd9-4f6a-a824-bbaf3f875e3d';
 const introImage = 'https://www.figma.com/api/mcp/asset/2fbee381-785b-4ee5-9c72-74ef61f6e2c2';
@@ -152,56 +154,46 @@ export default function MarbleHillPage() {
 
   return (
     <div className="bg-background">
-      <section className="relative min-h-[885px] pt-[82px] overflow-hidden">
-        <img src={heroImage} alt="Marble Hill hero" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="relative z-10 max-w-[1600px] mx-auto min-h-[803px] px-8 lg:px-16 flex items-end justify-between pb-12">
-          <h1 className="font-display text-[54px] md:text-[78px] leading-[1.05] tracking-[-0.8px] text-white">Marble Hill</h1>
-          <a
-            href="#contact"
-            className="bg-white px-[18px] py-[10px] text-[16px] font-medium text-primary hover:bg-primary hover:text-white transition-colors"
-          >
-            Register Now
-          </a>
-        </div>
+      <ProjectPageHero imageSrc={heroImage} imageAlt="Marble Hill hero" title="Marble Hill" showCta />
+
+      <section className="bg-white py-16 lg:py-20">
+        <ProjectImageTextGrid
+          layout="imageStart"
+          image={
+            <img src={introImage} alt="Marble Hill exterior" className="w-full h-[330px] object-cover lg:h-[453px]" />
+          }
+        >
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.48px]">Embrace West Coast living</h2>
+          <p className="mt-8 text-[16px] leading-[1.5]">
+            Marble Hill is a luxury community of custom single-family residences nestled in the lush, forested
+            hillsides of Chilliwack. Each home features distinctive contemporary architecture, spacious open-concept
+            layouts with high ceilings, and large windows that invite in natural light and breathtaking mountain
+            views, creating a seamless connection between indoor comfort and the great outdoors.
+          </p>
+        </ProjectImageTextGrid>
       </section>
 
       <section className="bg-white py-16 lg:py-20">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 items-start">
-          <img src={introImage} alt="Marble Hill exterior" className="w-full h-[330px] lg:h-[453px] object-cover" />
-          <div className="text-primary">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] tracking-[-0.48px]">Embrace West Coast living</h2>
-            <p className="mt-8 text-[16px] leading-[1.5]">
-              Marble Hill is a luxury community of custom single-family residences nestled in the lush, forested
-              hillsides of Chilliwack. Each home features distinctive contemporary architecture, spacious open-concept
-              layouts with high ceilings, and large windows that invite in natural light and breathtaking mountain
-              views, creating a seamless connection between indoor comfort and the great outdoors.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 lg:py-20">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 items-start">
-          <div className="text-primary">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] tracking-[-0.48px]">Exquisite Design</h2>
-            <p className="mt-8 text-[16px] leading-[1.5]">
-              With up to 3,500 sq. ft. of thoughtfully planned living space, each 4 to 6-bedroom home is built for
-              families seeking room to grow, entertain, and thrive. Energy-efficient systems, elegant finishes, and
-              customizable design options reflect Noura Homes&apos; enduring commitment to craftsmanship and sustainability.
-            </p>
-            <p className="mt-6 text-[16px] leading-[1.5]">
-              At Marble Hill, you&apos;ll find more than just a home; you&apos;ll discover a community where modern luxury meets
-              nature, and every detail is designed to help your family flourish.
-            </p>
-          </div>
-          <img src={designImage} alt="Marble Hill interior" className="w-full h-[330px] lg:h-[453px] object-cover" />
-        </div>
+        <ProjectImageTextGrid
+          layout="imageEnd"
+          image={<img src={designImage} alt="Marble Hill interior" className={projectImageEndSlotClass} />}
+        >
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.48px]">Exquisite Design</h2>
+          <p className="mt-8 text-[16px] leading-[1.5]">
+            With up to 3,500 sq. ft. of thoughtfully planned living space, each 4 to 6-bedroom home is built for
+            families seeking room to grow, entertain, and thrive. Energy-efficient systems, elegant finishes, and
+            customizable design options reflect Noura Homes&apos; enduring commitment to craftsmanship and sustainability.
+          </p>
+          <p className="mt-6 text-[16px] leading-[1.5]">
+            At Marble Hill, you&apos;ll find more than just a home; you&apos;ll discover a community where modern luxury meets
+            nature, and every detail is designed to help your family flourish.
+          </p>
+        </ProjectImageTextGrid>
       </section>
 
       <section className="bg-white py-14 lg:py-16">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] tracking-[-0.48px] text-primary text-center">
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.48px] text-primary text-center">
             Property Plan
           </h2>
           <div className="mt-10">
@@ -237,7 +229,7 @@ export default function MarbleHillPage() {
 
       <section className="bg-white py-12 lg:py-14">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] tracking-[-0.48px] text-primary text-center">
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.48px] text-primary text-center">
             Gallery
           </h2>
           <div className="mt-8">
@@ -272,15 +264,21 @@ export default function MarbleHillPage() {
       </section>
 
       <section className="bg-background py-16 lg:py-20">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 items-start">
-          <div className="text-primary">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15] tracking-[-0.48px]">Exploring Chilliwack</h2>
-            <p className="mt-8 text-[24px] md:text-[32px] leading-[1.5]">
-              Enjoy the peace and serenity of nature without sacrificing convenience.
-            </p>
-          </div>
-          <img src={exploreImage} alt="Exploring Chilliwack map" className="w-full h-[320px] lg:h-[386px] object-cover" />
-        </div>
+        <ProjectImageTextGrid
+          layout="imageEnd"
+          image={
+            <img
+              src={exploreImage}
+              alt="Exploring Chilliwack map"
+              className="h-[320px] w-full object-cover lg:col-start-2 lg:row-start-1 lg:h-[386px]"
+            />
+          }
+        >
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.48px]">Exploring Chilliwack</h2>
+          <p className="mt-8 text-[24px] md:text-[32px] leading-[1.5]">
+            Enjoy the peace and serenity of nature without sacrificing convenience.
+          </p>
+        </ProjectImageTextGrid>
       </section>
 
       <section className="bg-white py-14 lg:py-16">
@@ -297,7 +295,7 @@ export default function MarbleHillPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
-            <h2 className="font-display text-[40px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">
               Whether you&apos;re ready to design a custom home, exploring renovation options, or simply want to learn more
               about our process, our team is here to help. Share your goals and your vision; together, we&apos;ll transform

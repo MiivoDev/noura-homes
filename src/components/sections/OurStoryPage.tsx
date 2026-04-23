@@ -1,22 +1,32 @@
 import { ArrowRight } from 'lucide-react';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, SyntheticEvent } from 'react';
+
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  description: string;
+  imageStyle?: CSSProperties;
+  imageClassName?: string;
+};
 
 const imgHero = '/Our Story.jpg';
-const imgStorySide = 'https://www.figma.com/api/mcp/asset/2206473b-7c72-4035-86a8-f8373bd16580';
-const imgMission = 'https://www.figma.com/api/mcp/asset/077ff84e-238f-4462-8352-12bb7298da5e';
-const imgVision = 'https://www.figma.com/api/mcp/asset/3d0cfd33-339f-46d7-a43a-826846a22a25';
-const imgSocial = 'https://www.figma.com/api/mcp/asset/a532402a-6d70-4160-947c-3ee5997b690b';
-const imgNouraFamily = 'https://www.figma.com/api/mcp/asset/3b11dae3-b6f0-478c-92c7-3a38d51dfe28';
-const imgCulture = '/our-culture.jpg';
-const imgTeam1 = 'https://www.figma.com/api/mcp/asset/088306b4-ae29-42c1-b6da-e70f165056be';
-const imgTeam2 = 'https://www.figma.com/api/mcp/asset/e86d8675-120c-49cf-ad9a-0ad3fcf8a1af';
-const imgTeam3 = 'https://www.figma.com/api/mcp/asset/71be363e-ef54-404b-844d-2dc42856ba5c';
-const imgTeam4 = 'https://www.figma.com/api/mcp/asset/ba46b1a3-4716-4a3f-9c29-137a4fd6a40d';
-const imgTeam5 = 'https://www.figma.com/api/mcp/asset/60f114ec-4055-4e7c-a018-385e13d54571';
-const imgTeam6 = 'https://www.figma.com/api/mcp/asset/d9b5513d-22cf-4d23-9825-bae180db0825';
-const imgCta = 'https://www.figma.com/api/mcp/asset/fdf8d9f4-f0c2-4620-a66f-dd459fd45d17';
+const imgStorySide = '/our-story-image-53.png?v=20260422b';
+const imgMission = '/our-story-image-54.png?v=20260422b';
+const imgVision = '/our-story-image-55.png?v=20260422b';
+const imgSocial = '/our-story-image-56.png?v=20260422b';
+const imgNouraFamily = '/our-story-image-57.png?v=20260422b';
+const imgCulture = '/our-story-image-64.png?v=20260422b';
+const imgTeam1 = '/our-story-image-58.png?v=20260422b';
+const imgTeam2 = '/our-story-image-59.png?v=20260422b';
+const imgTeam3 = '/our-story-image-60.png?v=20260422b';
+const imgTeam4 = '/our-story-image-61.png?v=20260422b';
+const imgTeam5 = '/our-story-image-62.png?v=20260422b';
+const imgTeam6 = '/our-story-image-63.png?v=20260422b';
+const imgCta = '/our-story-rectangle-72.png?v=20260422b';
+const fallbackImage = '/our-story-hero-original.png';
 
-const team = [
+const team: TeamMember[] = [
   {
     name: 'Hooshang Askarian',
     role: 'Founder',
@@ -66,14 +76,20 @@ const team = [
 ];
 
 export default function OurStoryPage() {
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    const image = event.currentTarget;
+    if (image.src.includes(fallbackImage)) return;
+    image.src = fallbackImage;
+  };
+
   return (
     <div className="bg-background">
-      <section id="home" className="relative min-h-[900px] pt-[82px] overflow-hidden">
+      <section id="home" className="relative min-h-[620px] md:min-h-[760px] lg:min-h-[900px] pt-[82px] overflow-hidden">
         <img src={imgHero} alt="Our story hero" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 mx-auto flex min-h-[818px] w-full max-w-[1600px] items-center justify-center px-8 lg:px-16">
-          <h1 className="max-w-[612px] text-center font-display text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
+        <div className="relative z-10 mx-auto flex min-h-[538px] md:min-h-[678px] lg:min-h-[818px] w-full max-w-[1600px] items-center justify-center px-5 lg:px-16">
+          <h1 className="max-w-[612px] text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
             A Family Legacy of Craftsmanship, Luxury, and Trust
           </h1>
         </div>
@@ -82,7 +98,7 @@ export default function OurStoryPage() {
       <section id="our-story" className="w-full bg-background py-14">
         <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-10 px-8 lg:grid-cols-[1fr_441px] lg:gap-16 lg:px-16">
           <div>
-          <h2 className="font-display text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">Our Story</h2>
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">Our Story</h2>
           <div className="mt-6 max-w-[780px] space-y-10 text-[16px] leading-[1.7] text-primary">
             <p>
               For over three decades, Noura Homes has been built by a family for families. From Coquitlam to
@@ -121,9 +137,9 @@ export default function OurStoryPage() {
 
       <section className="w-full bg-background py-16">
         <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-10 px-8 lg:grid-cols-[583px_1fr] lg:gap-16 lg:px-16">
-          <img src={imgStorySide} alt="Our philosophy" className="h-[508px] w-full object-cover" />
+          <img src={imgStorySide} alt="Our philosophy" className="h-[508px] w-full object-cover" onError={handleImageError} />
           <div>
-          <h2 className="font-display text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">Our Philosophy</h2>
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">Our Philosophy</h2>
           <div className="mt-6 space-y-6 text-[16px] leading-[1.5] text-primary">
             <p>
               At Noura Homes, building homes is deeply personal. We believe true luxury lies in the details; in the
@@ -156,10 +172,10 @@ export default function OurStoryPage() {
 
       <section className="w-full bg-white py-[72px]">
         <div className="mx-auto w-full max-w-[1600px] space-y-14 px-8 lg:px-16">
-          <div className="flex items-center gap-6">
-            <img src={imgMission} alt="Mission" className="h-[102px] w-[102px] object-cover" />
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
+            <img src={imgMission} alt="Mission" className="h-[102px] w-[102px] object-cover" onError={handleImageError} />
             <div>
-              <h3 className="font-display text-[40px] leading-[1.2] tracking-[-0.4px] text-[#2f446e]">MISSION</h3>
+              <h3 className="font-display text-[20px] md:text-[40px] !font-medium leading-[1.2] tracking-[-0.4px] text-[#2f446e]">MISSION</h3>
               <p className="text-[16px] leading-[1.5] text-primary">
                 Connecting families and delivering unbeatable customer satisfaction is our passion, our clients trust us
                 to craft unique homes that meet their specific needs. We are sincerely committed to delivering the
@@ -167,10 +183,10 @@ export default function OurStoryPage() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-6">
-            <img src={imgVision} alt="Vision" className="h-[102px] w-[102px] object-cover" />
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
+            <img src={imgVision} alt="Vision" className="h-[102px] w-[102px] object-cover" onError={handleImageError} />
             <div>
-              <h3 className="font-display text-[40px] leading-[1.2] tracking-[-0.4px] text-[#2f446e]">VISION</h3>
+              <h3 className="font-display text-[20px] md:text-[40px] !font-medium leading-[1.2] tracking-[-0.4px] text-[#2f446e]">VISION</h3>
               <p className="text-[16px] leading-[1.5] text-primary">
                 Mastering the art of creating safe and stable spaces where individuals can nest in the comfort of
                 their home, allowing them to thrive in their community. We will continually improve the inclusivity and
@@ -178,10 +194,10 @@ export default function OurStoryPage() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-6">
-            <img src={imgSocial} alt="Social Responsibility" className="h-[102px] w-[102px] object-cover" />
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
+            <img src={imgSocial} alt="Social Responsibility" className="h-[102px] w-[102px] object-cover" onError={handleImageError} />
             <div>
-              <h3 className="font-display text-[40px] leading-[1.2] tracking-[-0.4px] text-[#2f446e]">
+              <h3 className="font-display text-[20px] md:text-[40px] !font-medium leading-[1.2] tracking-[-0.4px] text-[#2f446e]">
                 SOCIAL RESPONSIBILITY
               </h3>
               <p className="text-[16px] leading-[1.5] text-primary">
@@ -196,10 +212,10 @@ export default function OurStoryPage() {
       </section>
 
       <section className="w-full h-[721px] relative overflow-hidden">
-        <img src={imgNouraFamily} alt="Noura Family" className="absolute inset-0 h-full w-full object-cover object-center" />
+        <img src={imgNouraFamily} alt="Noura Family" className="absolute inset-0 h-full w-full object-cover object-center" onError={handleImageError} />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] items-center justify-center px-8 lg:px-16">
-          <h2 className="max-w-[612px] text-center font-display text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
+          <h2 className="max-w-[612px] text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
             Noura Family
           </h2>
         </div>
@@ -207,7 +223,7 @@ export default function OurStoryPage() {
 
       <section className="w-full bg-primary py-16">
         <div className="mx-auto w-full max-w-[1600px] px-8 lg:px-16">
-          <h2 className="text-center font-display text-[48px] leading-[1.2] tracking-[-0.48px] text-white">Meet Our Executive Team</h2>
+          <h2 className="text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white">Meet Our Executive Team</h2>
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
           {team.map((member, index) => (
             <article key={`${member.name}-${index}`} className="flex flex-col items-center gap-6 text-center text-white">
@@ -217,6 +233,7 @@ export default function OurStoryPage() {
                   alt={member.name}
                   className={`h-full w-full object-cover object-top ${member.imageClassName ?? ''}`}
                   style={member.imageStyle}
+                  onError={handleImageError}
                 />
                 <div className="absolute inset-0 translate-y-full bg-primary/92 px-5 py-5 text-left transition-transform duration-300 ease-out group-hover:translate-y-0 overflow-y-auto">
                   <div className="space-y-3 text-[14px] leading-[1.5] text-white/95">
@@ -233,11 +250,6 @@ export default function OurStoryPage() {
             </article>
           ))}
           </div>
-          <div className="mt-16 flex justify-center">
-            <button className="bg-white px-[18px] py-[10px] text-[16px] font-medium leading-[1.5] text-primary">
-              Learn More About Us
-            </button>
-          </div>
         </div>
       </section>
 
@@ -246,7 +258,7 @@ export default function OurStoryPage() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] items-center justify-center px-8 lg:px-16">
           <div className="max-w-[648px] text-center text-white">
-            <h2 className="font-display text-[48px] leading-[1.2] tracking-[-0.48px]">Our Culture</h2>
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px]">Our Culture</h2>
             <p className="mt-[17px] text-[16px] leading-[1.5]">
               At Noura Homes, we’re more than a team; we’re a family. Collaboration, respect, and pride in our craft
               guide everything we do. We celebrate milestones together and share the joy of seeing each client’s dream
@@ -258,9 +270,9 @@ export default function OurStoryPage() {
 
       <section className="w-full bg-white py-14">
         <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-14 lg:gap-20 px-8 lg:grid-cols-[693px_1fr] lg:px-16">
-          <img src={imgCta} alt="Interior showcase" className="h-[606px] w-full object-cover" />
+          <img src={imgCta} alt="Interior showcase" className="h-[606px] w-full object-cover" onError={handleImageError} />
           <div>
-            <h2 className="font-display text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary">
               Your dream home begins with a conversation.
             </h2>
             <p className="mt-4 text-[16px] leading-[1.5] text-primary">

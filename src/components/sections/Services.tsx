@@ -60,7 +60,7 @@ export default function Services() {
     <section className="py-24 md:py-32 bg-[#FDFBF7] overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
         <div className="text-center mb-16">
-          <h2 className="text-[48px] font-display text-primary mb-6 leading-tight">
+          <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-display leading-[1.2] tracking-[-0.48px] text-primary mb-6">
             Expertly Crafted Homes<br />Designed Around You
           </h2>
         </div>

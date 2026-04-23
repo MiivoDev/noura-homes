@@ -54,7 +54,7 @@ export default function AwardsAssociationsPage() {
         <img src={heroImage} alt="About Noura Homes" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 max-w-[1600px] mx-auto px-8 lg:px-16 min-h-[760px] md:min-h-[900px] flex items-center justify-center pt-[82px]">
-          <h1 className="max-w-[680px] text-center font-display text-[42px] md:text-[56px] leading-[1.15] text-white tracking-[-0.5px]">
+          <h1 className="max-w-[680px] text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
             A Family Legacy of Craftsmanship, Luxury, and Trust
           </h1>
         </div>
@@ -70,7 +70,7 @@ export default function AwardsAssociationsPage() {
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
           <img src={communityImage} alt="Noura Homes Community Fund" className="w-full h-full min-h-[340px] object-cover" />
           <div className="text-primary">
-            <h2 className="font-display text-[36px] md:text-[48px] leading-[1.15]">Noura Homes Community Fund</h2>
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">Noura Homes Community Fund</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">
               In 2017, Hooshang and Jamileh established a donor-advised fund with the Coquitlam Foundation in
               celebration of Noura's 25th Anniversary. The fund's purpose is to improve the quality of life and provide
@@ -88,7 +88,7 @@ export default function AwardsAssociationsPage() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <h2 className="text-center font-display text-[34px] md:text-[48px] leading-[1.15] text-primary mb-10 md:mb-14">
+          <h2 className="text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] text-primary mb-10 md:mb-14">
             Charities &amp; Community Groups supported by Noura Homes
           </h2>
           <div className="space-y-6 md:space-y-8">
@@ -118,7 +118,7 @@ export default function AwardsAssociationsPage() {
         <div className="max-w-[1600px] mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
           <img src="/Custom Build.png" alt="Interior" className="w-full h-full min-h-[340px] object-cover" />
           <div className="text-primary">
-            <h2 className="font-display text-[36px] md:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
+            <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
             <p className="mt-4 text-[15px] md:text-[16px] leading-[1.6]">
               Whether you're ready to design a custom home, exploring renovation options, or simply want to learn more
               about our process, our team is here to help.
