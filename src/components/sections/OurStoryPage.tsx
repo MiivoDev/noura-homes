@@ -20,7 +20,8 @@ const imgCulture = '/our-story-image-64.png?v=20260422b';
 const imgTeam1 = '/our-story-image-58.png?v=20260422b';
 const imgTeam2 = '/our-story-image-59.png?v=20260422b';
 const imgTeam3 = '/our-story-image-60.png?v=20260422b';
-const imgTeam4 = '/our-story-image-61.png?v=20260422b';
+/** Asana portrait from Figma node 214:2178 (masked 427×452 in design) */
+const imgAsanaFigma = '/our-story/asana-askarian-figma-214-2178.png';
 const imgTeam5 = '/our-story-image-62.png?v=20260422b';
 const imgTeam6 = '/our-story-image-63.png?v=20260422b';
 const imgCta = '/our-story-rectangle-72.png?v=20260422b';
@@ -38,6 +39,10 @@ const team: TeamMember[] = [
     name: 'Jamileh Askarian',
     role: 'Co-founder and President',
     image: imgTeam2,
+    imageStyle: {
+      transform: 'scale(1.08)',
+      objectPosition: 'center 18%',
+    } as CSSProperties,
     description:
       'Jamileh co-founded Noura Homes in 1992 and continues to lead the company with purpose and resilience. With over $150M in project experience, she has earned deep respect in the construction industry and helped pave the way for the next generation of builders through values rooted in honesty, hard work, and community impact.\n\nHer leadership style combines sharp operational insight with people-first decision-making, ensuring every project reflects both high standards and meaningful contribution to the communities Noura serves.',
   },
@@ -51,11 +56,7 @@ const team: TeamMember[] = [
   {
     name: 'Asana Askarian',
     role: 'Vice President Of Operations',
-    image: imgTeam4,
-    imageStyle: {
-      transform: 'scale(1.02)',
-      objectPosition: 'center 18%',
-    } as CSSProperties,
+    image: imgAsanaFigma,
     description:
       'Growing up in a family immersed in construction, Asana developed an early passion for building and operations. Today, she brings strong execution, innovation, and process discipline to Noura Homes, helping maintain quality and efficiency across projects while continuing the family’s commitment to excellence.\n\nHer focus on systems, delivery, and team coordination plays a key role in keeping projects on schedule and aligned with the premium standards clients expect from Noura.',
   },
@@ -89,12 +90,11 @@ export default function OurStoryPage() {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 mx-auto flex min-h-[538px] md:min-h-[678px] lg:min-h-[818px] w-full max-w-[1600px] items-center justify-center px-5 lg:px-16">
-          <h1 className="max-w-[612px] text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
+          <h1 className="max-w-[612px] translate-y-8 text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
             A Family Legacy of Craftsmanship, Luxury, and Trust
           </h1>
         </div>
       </section>
-
       <section id="our-story" className="w-full bg-background py-14">
         <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-10 px-8 lg:grid-cols-[1fr_441px] lg:gap-16 lg:px-16">
           <div>
@@ -212,7 +212,7 @@ export default function OurStoryPage() {
       </section>
 
       <section className="w-full h-[721px] relative overflow-hidden">
-        <img src={imgNouraFamily} alt="Noura Family" className="absolute inset-0 h-full w-full object-cover object-center" onError={handleImageError} />
+        <img src={imgNouraFamily} alt="Noura Family" className="absolute inset-0 h-full w-full object-cover object-[50%_42%]" onError={handleImageError} />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] items-center justify-center px-8 lg:px-16">
           <h2 className="max-w-[612px] text-center font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-white">
@@ -281,7 +281,7 @@ export default function OurStoryPage() {
               your ideas into a home that feels unmistakably yours.
             </p>
             <button className="mt-9 inline-flex items-center gap-2 border border-primary px-[18px] py-[10px] text-[16px] font-medium leading-[1.5] text-primary">
-              Lets Connect
+              Let's Connect
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>

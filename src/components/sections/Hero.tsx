@@ -11,17 +11,19 @@ const slides = [
   },
   {
     video: "/Marble Hill.mp4",
-    chip: "Bookings open",
-    title: "Marble Hill - The New Residential Project.",
+    chip: "Available Now",
+    title: "Marble Hill",
+    subtitle: "Embrace West Coast living",
     description:
-      "Discover Marble Hill, our newest residential community thoughtfully designed for elevated family living, timeless architecture, and modern comfort."
+      "Discover Marble Hill, a luxury community of custom single-family residences nestled in the lush, forested hillsides of Chilliwack."
   },
   {
     video: "/Emerald Ridge mp4.mp4",
-    chip: "Upcoming project",
-    title: "Emerald Ridge - New Luxury Stays.",
+    chip: "Available Now",
+    title: "Emerald Ridge",
+    subtitle: "Experience refined family living",
     description:
-      "Experience Emerald Ridge, a fresh collection of luxury stays crafted with refined finishes, serene surroundings, and exceptional lifestyle amenities."
+      "Experience Emerald Ridge, an exclusive enclave of estate homes in Maple Ridge. Each residence sits on a generous 6,000 + sq. ft. lot backing onto a tranquil greenbelt."
   }
 ];
 
@@ -89,6 +91,11 @@ export default function Hero() {
               )}
               <h1 className="text-[28px] md:text-[40px] lg:text-[48px] font-display leading-[1.2] tracking-[-0.48px] mb-3 md:mb-5 lg:mb-4">
                 {slides[currentIndex].title}
+                {slides[currentIndex].subtitle && (
+                  <span className="mt-1 block text-[18px] md:text-[24px] lg:text-[28px] leading-[1.25] tracking-[-0.28px]">
+                    {slides[currentIndex].subtitle}
+                  </span>
+                )}
               </h1>
               
               <p className="text-white/85 text-sm md:text-base lg:text-[14px] mb-6 md:mb-8 lg:mb-7 max-w-md leading-relaxed">

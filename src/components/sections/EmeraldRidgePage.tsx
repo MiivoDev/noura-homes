@@ -4,11 +4,11 @@ import MoreMessagesFromOwners from './MoreMessagesFromOwners';
 import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/366cfba9-4ebc-425a-85b3-ba307084af05';
-const introImage = 'https://www.figma.com/api/mcp/asset/2e3f8a67-3281-4851-9288-02cf7dac4f95';
-const designImage = 'https://www.figma.com/api/mcp/asset/d32af9c4-ebf7-440b-b9c0-55dbfb3feecc';
-const exploreImage = 'https://www.figma.com/api/mcp/asset/0e67a011-9d5e-491e-9e56-5b15ef466688';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/d5068b63-d446-4bd3-bce7-80e6c4204675';
+const heroImage = '/Emerald Ridge/emarald-gallery-image-33.webp';
+const introImage = '/Emerald Ridge/emarald-gallery-image-23.webp';
+const designImage = '/Emerald Ridge/emerald-ridge-exquisite.jpeg';
+const exploreImage = '/Emerald Ridge/emarald-gallery-image-35-scaled.webp';
+const ctaImage = '/Banner.jpg';
 const EMERALD_RIDGE_PUBLIC = 'Emerald Ridge';
 const virtualTours = [
   {
@@ -23,64 +23,55 @@ const virtualTours = [
   },
 ] as const;
 const propertyPlanImages = [
-  'https://www.figma.com/api/mcp/asset/5dfa6801-7b46-4f8a-aa4c-22f15c07c81b',
-  'https://www.figma.com/api/mcp/asset/3676ce96-424b-43b9-bdf8-8d3b1b39c571',
-  'https://www.figma.com/api/mcp/asset/a767c8c4-b91d-4f05-ac35-0e9fdb891e35',
-  'https://www.figma.com/api/mcp/asset/2506c3cf-0776-478f-b4bf-7d48386e98e3',
-  'https://www.figma.com/api/mcp/asset/87014d32-6ab6-4c0c-81cf-af12baaa6920',
-  'https://www.figma.com/api/mcp/asset/219f1d5b-8c2b-4a3b-982e-62c0d0a13bbe',
-  'https://www.figma.com/api/mcp/asset/959f143b-94f3-4e55-9fba-dcbaf9d8819b',
-  'https://www.figma.com/api/mcp/asset/b0fe860e-9bc8-48f6-a0b6-b38f939fcda1',
-  'https://www.figma.com/api/mcp/asset/dede0e9c-5f03-45d8-8ab5-a7e762da0db3',
-  'https://www.figma.com/api/mcp/asset/f5ba8ccb-6b63-4753-beb0-7568c09206f4',
+  '/Emerald Ridge/dark-emerald.webp',
+  '/Emerald Ridge/dark-emerald2.webp',
+  '/Emerald Ridge/green-emerald.webp',
+  '/Emerald Ridge/green-emerald2.webp',
+  '/Emerald Ridge/phlox-emerald.webp',
+  '/Emerald Ridge/phlox-emerald2.webp',
+  '/Emerald Ridge/pink-emerald.webp',
+  '/Emerald Ridge/pink-emerald2.webp',
+  '/Emerald Ridge/starling-emerald.webp',
+  '/Emerald Ridge/starling-emerald2.webp',
 ];
 
-const emeraldRidgeGalleryFiles = [
-  '1011_71.jpg',
-  '1251_38.jpg',
-  '201_9.jpg',
-  '2143_16.jpg',
-  '2320_37.jpg',
-  '2479_34 (1).jpg',
-  '2715_22.jpg',
-  '2850_8.jpg',
-  '3260_41.jpg',
-  '3913_1.jpg',
-  '4205_57.jpg',
-  '4659_6.jpg',
-  '4752_18.jpg',
-  '4828_3579-Brownlee-Ave-Coquitlam-360hometours-13_Emerald_Ridge_by_Noura_Homes_copy.jpg',
-  '487_14.jpg',
-  '4932_4.jpg',
-  '5142_60.jpg',
-  '5282_13.jpg',
-  '5596_9.jpg',
-  '6385_59.jpg',
-  '6475_23.jpg',
-  '6483_57.jpg',
-  '6552_36.jpg',
-  '6649_45.jpg',
-  '6734_31.jpg',
-  '7970_Image_-_Emerald_Ridge_by_Noura_Homes_copy.jpg',
-  '8042_42.jpg',
-  '8135_44.jpg',
-  '813_59.jpg',
-  '8283_2.jpg',
-  '8369_2.jpg',
-  '8406_65.jpg',
-  '8558_46.jpg',
-  '8773_34.jpg',
-  '8938_1390-Mitchell-Street-Coquitlam-360hometours-10s_-_Emerald_Ridge_by_Noura_Homes_copy.jpg',
-  '9173_74.jpg',
-  '9313_30.jpg',
-  '9508_26.jpg',
-  '9661_33.jpg',
-  '9879_69.jpg',
+const galleryImages = [
+  '/Emerald Ridge/emarald-gallery-image-4.webp',
+  '/Emerald Ridge/emarald-gallery-image-5.webp',
+  '/Emerald Ridge/emarald-gallery-image-6.webp',
+  '/Emerald Ridge/emarald-gallery-image-7.webp',
+  '/Emerald Ridge/emarald-gallery-image-8.webp',
+  '/Emerald Ridge/emarald-gallery-image-9.webp',
+  '/Emerald Ridge/emarald-gallery-image-10.webp',
+  '/Emerald Ridge/emarald-gallery-image-11.webp',
+  '/Emerald Ridge/emarald-gallery-image-12.webp',
+  '/Emerald Ridge/emarald-gallery-image-14.webp',
+  '/Emerald Ridge/emarald-gallery-image-15.webp',
+  '/Emerald Ridge/emarald-gallery-image-16.webp',
+  '/Emerald Ridge/emarald-gallery-image-17.webp',
+  '/Emerald Ridge/emarald-gallery-image-18.webp',
+  '/Emerald Ridge/emarald-gallery-image-19.webp',
+  '/Emerald Ridge/emarald-gallery-image-20.webp',
+  '/Emerald Ridge/emarald-gallery-image-21.webp',
+  '/Emerald Ridge/emarald-gallery-image-22.webp',
+  '/Emerald Ridge/emarald-gallery-image-24.webp',
+  '/Emerald Ridge/emarald-gallery-image-25.webp',
+  '/Emerald Ridge/emarald-gallery-image-26.webp',
+  '/Emerald Ridge/emarald-gallery-image-27.webp',
+  '/Emerald Ridge/emarald-gallery-image-28.webp',
+  '/Emerald Ridge/emarald-gallery-image-29.webp',
+  '/Emerald Ridge/emarald-gallery-image-30.webp',
+  '/Emerald Ridge/emarald-gallery-image-31.webp',
+  '/Emerald Ridge/emarald-gallery-image-32.webp',
+  '/Emerald Ridge/emarald-gallery-image-33-1.webp',
+  '/Emerald Ridge/emarald-gallery-image-34.webp',
+  '/Emerald Ridge/emarald-gallery-image-36.webp',
+  '/Emerald Ridge/emarald-gallery-image-37.webp',
+  '/Emerald Ridge/emarald-gallery-image-38.webp',
+  '/Emerald Ridge/emarald-gallery-image-39.webp',
+  '/Emerald Ridge/emarald-gallery-image-40.webp',
+  '/Emerald Ridge/emarald-gallery-image-1.webp',
 ];
-
-const galleryImages = emeraldRidgeGalleryFiles.map(
-  (file) => `/${encodeURIComponent(EMERALD_RIDGE_PUBLIC)}/${encodeURIComponent(file)}`
-);
 
 const shopping = [
   'Save-On Foods',
@@ -355,7 +346,7 @@ export default function EmeraldRidgePage() {
 
       <section className="relative min-h-[600px] overflow-hidden">
         <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
             <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
@@ -368,7 +359,7 @@ export default function EmeraldRidgePage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

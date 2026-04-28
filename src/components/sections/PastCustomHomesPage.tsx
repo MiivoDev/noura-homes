@@ -1,13 +1,14 @@
-import { ProjectImageTextGrid, projectImageEndCaseStudyClass, projectImageEndSlotClass } from './ProjectImageTextGrid';
+import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/cd0bc3f2-cee1-4861-9ab0-76ce8cdd7676';
-const leylandImage = 'https://www.figma.com/api/mcp/asset/f188d662-d2de-4915-9330-e71278e6a67c';
-const madoreImage = 'https://www.figma.com/api/mcp/asset/54d66fbc-ab13-40ed-ae24-a15390dae1e8';
-const robsonImage = 'https://www.figma.com/api/mcp/asset/a3ed459d-d255-4486-be15-93b206caea94';
-const stewartImage = 'https://www.figma.com/api/mcp/asset/0ac2191e-0ffa-4eed-92f6-be58e1dd2a5a';
-const wallsImage = 'https://www.figma.com/api/mcp/asset/24eecd95-9eb1-4c9c-9e4e-f6812e8ed6cb';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/e2fa8efd-db71-4768-a1a7-027839fdc578';
+const heroImage = '/custom-homes/hero.webp';
+const leylandImage = '/custom-homes/leyland.webp';
+const regentImage = '/custom-homes/regent.webp';
+const madoreImage = '/custom-homes/madore.png';
+const robsonImage = '/custom-homes/robson.webp';
+const stewartImage = '/custom-homes/stewart.webp';
+const wallsImage = '/custom-homes/walls.webp';
+const ctaImage = '/Banner.jpg';
 
 export default function PastCustomHomesPage() {
   return (
@@ -44,7 +45,34 @@ export default function PastCustomHomesPage() {
         <ProjectImageTextGrid
           layout="imageEnd"
           className="items-center gap-12 lg:gap-16"
-          image={<img src={madoreImage} alt="Madore Custom Home" className={projectImageEndSlotClass} />}
+          image={<img src={regentImage} alt="Regent Custom Home" className={projectImageEndSlotClass} />}
+        >
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px]">Regent Custom Home</h2>
+          <p className="mt-8 text-[16px] leading-[1.5]">
+            This custom home showcases all the features you can include when building your own home: custom-made wine
+            rooms, gourmet kitchens, luxury powder rooms, built-in office cabinets, and indoor-outdoor living with
+            sliding glass doors opening to a refined outdoor space.
+          </p>
+          <a
+            href="/projects/past/custom-homes/regent-custom-home"
+            className="mt-7 inline-flex items-center justify-center border border-primary bg-primary px-[18px] py-[10px] text-[14px] font-semibold uppercase tracking-[0.08em] text-white hover:bg-primary/90 transition-colors"
+          >
+            View Property
+          </a>
+        </ProjectImageTextGrid>
+      </section>
+
+      <section className="bg-white py-16 lg:py-20">
+        <ProjectImageTextGrid
+          layout="imageStart"
+          className="items-center gap-12 lg:gap-16"
+          image={
+            <img
+              src={madoreImage}
+              alt="Madore Custom Home"
+              className="w-full h-[330px] object-cover lg:h-[453px]"
+            />
+          }
         >
           <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px]">Madore Custom Home</h2>
           <p className="mt-8 text-[16px] leading-[1.5]">
@@ -63,15 +91,9 @@ export default function PastCustomHomesPage() {
 
       <section className="bg-white py-16 lg:py-20">
         <ProjectImageTextGrid
-          layout="imageStart"
+          layout="imageEnd"
           className="items-center gap-12 lg:gap-16"
-          image={
-            <img
-              src={robsonImage}
-              alt="Robson Custom Home"
-              className="w-full h-[330px] object-cover lg:h-[453px]"
-            />
-          }
+          image={<img src={robsonImage} alt="Robson Custom Home" className={projectImageEndSlotClass} />}
         >
           <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px]">Robson Custom Home</h2>
           <p className="mt-8 text-[16px] leading-[1.5]">
@@ -89,9 +111,15 @@ export default function PastCustomHomesPage() {
 
       <section className="bg-white py-16 lg:py-20">
         <ProjectImageTextGrid
-          layout="imageEnd"
+          layout="imageStart"
           className="items-center gap-12 lg:gap-16"
-          image={<img src={stewartImage} alt="Stewart Custom Home" className={projectImageEndSlotClass} />}
+          image={
+            <img
+              src={stewartImage}
+              alt="Stewart Custom Home"
+              className="w-full h-[330px] object-cover lg:h-[453px]"
+            />
+          }
         >
           <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px]">Stewart Custom Home</h2>
           <p className="mt-8 text-[16px] leading-[1.5]">
@@ -110,15 +138,9 @@ export default function PastCustomHomesPage() {
 
       <section className="bg-white py-16 lg:py-20">
         <ProjectImageTextGrid
-          layout="imageStart"
+          layout="imageEnd"
           className="items-center gap-12 lg:gap-16"
-          image={
-            <img
-              src={wallsImage}
-              alt="Walls Custom Home"
-              className="w-full h-[330px] object-cover lg:h-[453px]"
-            />
-          }
+          image={<img src={wallsImage} alt="Walls Custom Home" className={projectImageEndSlotClass} />}
         >
           <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px]">Walls Custom Home</h2>
           <p className="mt-8 text-[16px] leading-[1.5]">
@@ -152,7 +174,7 @@ export default function PastCustomHomesPage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

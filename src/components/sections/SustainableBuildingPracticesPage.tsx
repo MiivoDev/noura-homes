@@ -5,7 +5,7 @@ const imgHero = '/sustainable-hero.webp?v=20260422a';
 const imgIntro = '/sustainable-green-building.webp?v=20260422a';
 const imgImpact = '/sustainable-measurable-impact.webp?v=20260422a';
 const imgLeadership = '/sustainable-global-local.webp?v=20260422a';
-const imgLegacy = '/sustainable-hero.webp?v=20260422a';
+const imgLegacy = '/Sustainable%20Building.jpg';
 const imgCta = '/sustainable-green-building.webp?v=20260422a';
 const fallbackImage = '/our-story-hero-original.png';
 
@@ -166,7 +166,7 @@ export default function SustainableBuildingPracticesPage() {
               your ideas into a home that feels unmistakably yours.
             </p>
             <button className="mt-9 inline-flex items-center gap-2 border border-primary px-[18px] py-[10px] text-[16px] font-medium leading-[1.5] text-primary">
-              Lets Connect
+              Let's Connect
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>

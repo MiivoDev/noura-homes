@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 
 const projects = [
   {
@@ -30,6 +30,7 @@ const projects = [
     images: [
       "/thomas-avenue/exterior.jpeg?v=20260422a"
     ],
+    location: "Coquitlam",
     description: "Purpose-built multi-family residences designed for modern living, strong long-term value, and refined architecture."
   }
 ];
@@ -55,12 +56,18 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         />
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        
-        {/* Title */}
-        <div className="absolute bottom-6 left-6 z-20">
+
+        {/* Title + location */}
+        <div className="absolute bottom-6 left-6 right-6 z-20 flex items-end justify-between gap-4">
           <h3 className="text-white text-[20px] md:text-[24px] lg:text-[28px] font-display">
             {project.title}
           </h3>
+          {project.location ? (
+            <span className="inline-flex items-center gap-1 border-b border-white py-1 text-[13px] font-medium text-white">
+              <MapPin className="size-4" strokeWidth={1.6} />
+              {project.location}
+            </span>
+          ) : null}
         </div>
 
       </button>

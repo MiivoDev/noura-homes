@@ -127,7 +127,7 @@ export default function AwardsAssociationsPage() {
               href="#contact"
               className="mt-8 inline-flex items-center justify-center border border-primary px-5 py-2.5 text-[16px] font-medium text-primary hover:bg-primary hover:text-white transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

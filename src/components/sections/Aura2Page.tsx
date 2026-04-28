@@ -6,25 +6,21 @@ import { ProjectPageHero } from './ProjectPageHero';
 /** Virtual tour from Noura Homes legacy page (Aura 2). */
 const AURA_2_YOUTUBE_VIDEO_ID = 'tRwsI0ItImU';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/3c050fd7-8c88-4dcd-9980-b5844927f414';
-const lifeHappensImage = 'https://www.figma.com/api/mcp/asset/224e38c7-ff7f-436e-b020-faadafa5fc58';
-const uniqueExperienceImage = 'https://www.figma.com/api/mcp/asset/5f420880-9dea-41da-9650-969c7219f9ea';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/b1fd598c-d379-4208-90f2-89ac1557ad1f';
+const heroImage = '/aura-2/hero.webp';
+const lifeHappensImage = '/aura-2/image-01.webp';
+const uniqueExperienceImage = '/aura-2/image-02.webp';
+const ctaImage = '/Banner.jpg';
 
-const aura3 = (file: string) => `/Aura%203/${file}?v=20260420`;
-
-const aura3GalleryImages = [
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-04.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-05.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-07.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-14.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-16.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-18.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-19.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-23.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-25.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-28.jpg'),
-  aura3('3579-Brownlee-Ave-Coquitlam-360hometours-29.jpg'),
+const aura2GalleryImages = [
+  '/aura-2/image-01.webp',
+  '/aura-2/image-02.webp',
+  '/aura-2/image-03.webp',
+  '/aura-2/image-04.webp',
+  '/aura-2/image-05.webp',
+  '/aura-2/image-06.webp',
+  '/aura-2/image-07.webp',
+  '/aura-2/image-08.webp',
+  '/aura-2/image-09.webp',
 ];
 
 export default function Aura2Page() {
@@ -96,7 +92,7 @@ export default function Aura2Page() {
               ref={galleryPairRef}
               className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth"
             >
-              {aura3GalleryImages.map((src, index) => (
+              {aura2GalleryImages.map((src, index) => (
                 <img
                   key={src}
                   src={src}
@@ -150,7 +146,7 @@ export default function Aura2Page() {
                 aria-label="Play Aura 2 virtual tour video"
               >
                 <img
-                  src={aura3GalleryImages[0]}
+                  src={aura2GalleryImages[0]}
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover"
                   loading="lazy"
@@ -180,7 +176,7 @@ export default function Aura2Page() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

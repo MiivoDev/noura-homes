@@ -3,25 +3,25 @@ import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/4cf69048-bdd9-4f6a-a824-bbaf3f875e3d';
-const introImage = 'https://www.figma.com/api/mcp/asset/2fbee381-785b-4ee5-9c72-74ef61f6e2c2';
-const designImage = 'https://www.figma.com/api/mcp/asset/f6b2347a-a0e8-4e8d-bc79-f78e5e4cd070';
-const exploreImage = 'https://www.figma.com/api/mcp/asset/a8b4e515-8fd7-4f73-8a17-e04801129a87';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/0dddc23f-4fba-4322-b17b-c4adbe41ecd7';
+const heroImage = '/Marble Hill/marble-hill-hero.webp';
+const introImage = '/Marble Hill/marble-hill-gallery-pic-22.webp';
+const designImage = '/Marble Hill/marble-hill-gallery-pic-1.webp';
+const exploreImage = '/Marble Hill/minute.webp';
+const ctaImage = '/Banner.jpg';
 
 const propertyPlanImages = [
-  'https://www.figma.com/api/mcp/asset/b50410e0-fd1f-4c33-9739-3029a277ebe9',
-  'https://www.figma.com/api/mcp/asset/50297273-dd47-4d39-8338-31c546c34002',
-  'https://www.figma.com/api/mcp/asset/8b550368-2b41-43fe-9aa9-289d24ce5891',
-  'https://www.figma.com/api/mcp/asset/5418326f-758e-432d-9e33-72aad6df551e',
-  'https://www.figma.com/api/mcp/asset/8c6ef14f-0231-47d5-aadd-99d1209c5523',
-  'https://www.figma.com/api/mcp/asset/93579602-149a-4b5e-8052-02f1ea18e88c',
-  'https://www.figma.com/api/mcp/asset/fd3e655f-de0f-4f25-a6ca-6ecc74a3c4cd',
-  'https://www.figma.com/api/mcp/asset/9fff3e3b-4d7e-431a-b87c-89e5e8a280b2',
-  'https://www.figma.com/api/mcp/asset/98ac5e4c-8952-4671-847b-103036f56908',
-  'https://www.figma.com/api/mcp/asset/65ee34b3-d447-40b7-8875-673d70821e0c',
-  'https://www.figma.com/api/mcp/asset/b21fd692-1a8b-4c0c-85cf-a88616737d86',
-  'https://www.figma.com/api/mcp/asset/18b7c609-4330-4267-a1ef-69b343455110',
+  '/Marble Hill/black-marble-front.webp',
+  '/Marble Hill/black-marble-upper.webp',
+  '/Marble Hill/blue-marble-front.webp',
+  '/Marble Hill/blue-marble-upper.webp',
+  '/Marble Hill/golden-marble-front.webp',
+  '/Marble Hill/golden-marble-upper.webp',
+  '/Marble Hill/green-marble-front.webp',
+  '/Marble Hill/green-marble-upper.webp',
+  '/Marble Hill/grey-marble-front.webp',
+  '/Marble Hill/grey-marble-upper.webp',
+  '/Marble Hill/pink-marble-front.webp',
+  '/Marble Hill/pink-marble-upper.webp',
 ];
 
 const MARBLE_HILL_FOLDER = 'Marble Hill';
@@ -30,47 +30,30 @@ const marbleHillVirtualTourUrl = 'https://my.matterport.com/show/?m=tYVmwGvWnxz'
 const marbleHillVirtualTourThumb = `/${encodeURIComponent(MARBLE_HILL_FOLDER)}/virtual-tour.webp?v=20260423a`;
 
 const galleryImages = [
-  '/Marble Hill/1092_4.jpg',
-  '/Marble Hill/1494_3.jpg',
-  '/Marble Hill/1505_55.jpg',
-  '/Marble Hill/1711_50.jpg',
-  '/Marble Hill/1950_16.jpg',
-  '/Marble Hill/2049_53.jpg',
-  '/Marble Hill/2228_1.jpg',
-  '/Marble Hill/2547_20.jpg',
-  '/Marble Hill/2644_25.jpg',
-  '/Marble Hill/2756_21.jpg',
-  '/Marble Hill/3041_48.jpg',
-  '/Marble Hill/3046_60.jpg',
-  '/Marble Hill/3321_54.jpg',
-  '/Marble Hill/3777_10.jpg',
-  '/Marble Hill/3827_57.jpg',
-  '/Marble Hill/3847_49.jpg',
-  '/Marble Hill/3980_61.jpg',
-  '/Marble Hill/4052_59.jpg',
-  '/Marble Hill/4682_23.jpg',
-  '/Marble Hill/4760_46.jpg',
-  '/Marble Hill/4828_32.jpg',
-  '/Marble Hill/4874_31.jpg',
-  '/Marble Hill/508_47.jpg',
-  '/Marble Hill/5308_18.jpg',
-  '/Marble Hill/5391_9.jpg',
-  '/Marble Hill/5531_6.jpg',
-  '/Marble Hill/5636_58.jpg',
-  '/Marble Hill/5943_52.jpg',
-  '/Marble Hill/6012_8.jpg',
-  '/Marble Hill/6594_12.jpg',
-  '/Marble Hill/6722_13.jpg',
-  '/Marble Hill/6782_51.jpg',
-  '/Marble Hill/7003_19.jpg',
-  '/Marble Hill/7386_28.jpg',
-  '/Marble Hill/9027_29.jpg',
-  '/Marble Hill/9032_56.jpg',
-  '/Marble Hill/9191_43.jpg',
-  '/Marble Hill/9476_26.jpg',
-  '/Marble Hill/9514_17.jpg',
-  '/Marble Hill/9814_15.jpg',
-  '/Marble Hill/98_24.jpg',
+  '/Marble Hill/marble-hill-gallery-pic-3.webp',
+  '/Marble Hill/marble-hill-gallery-pic-4.webp',
+  '/Marble Hill/marble-hill-gallery-pic-5.webp',
+  '/Marble Hill/marble-hill-gallery-pic-6.webp',
+  '/Marble Hill/marble-hill-gallery-pic-7.webp',
+  '/Marble Hill/marble-hill-gallery-pic-8.webp',
+  '/Marble Hill/marble-hill-gallery-pic-9.webp',
+  '/Marble Hill/marble-hill-gallery-pic-10.webp',
+  '/Marble Hill/marble-hill-gallery-pic-11.webp',
+  '/Marble Hill/marble-hill-gallery-pic-12.webp',
+  '/Marble Hill/marble-hill-gallery-pic-13.webp',
+  '/Marble Hill/marble-hill-gallery-pic-14.webp',
+  '/Marble Hill/marble-hill-gallery-pic-15.webp',
+  '/Marble Hill/marble-hill-gallery-pic-16.webp',
+  '/Marble Hill/marble-hill-gallery-pic-17.webp',
+  '/Marble Hill/marble-hill-gallery-pic-18.webp',
+  '/Marble Hill/marble-hill-gallery-pic-19.webp',
+  '/Marble Hill/marble-hill-gallery-pic-20.webp',
+  '/Marble Hill/marble-hill-gallery-pic-21.webp',
+  '/Marble Hill/marble-hill-gallery-pic-23.webp',
+  '/Marble Hill/marble-hill-gallery-pic-24.webp',
+  '/Marble Hill/marble-hill-gallery-pic-25.webp',
+  '/Marble Hill/marble-hill-gallery-pic-26.webp',
+  '/Marble Hill/marble-hill-gallery-pic-27.webp',
 ];
 
 const parksAndRecreation = [
@@ -330,7 +313,7 @@ export default function MarbleHillPage() {
 
       <section className="relative min-h-[600px] overflow-hidden">
         <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative z-10 max-w-[1600px] mx-auto min-h-[600px] px-8 lg:px-16 flex items-center justify-center">
           <div className="max-w-[790px] text-center text-white">
             <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">Your dream home begins with a conversation.</h2>
@@ -343,7 +326,7 @@ export default function MarbleHillPage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-5 py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

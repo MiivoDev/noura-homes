@@ -2,13 +2,10 @@ import { motion } from 'framer-motion';
 
 const awards = [
   {
-    title: "TRI-CITIES CHAMBER EXCELLENCE\nAWARD NOMINATIONS",
+    title: "RIDGE MEADOWS CHAMBER OF\nCOMMERCE AWARDS",
     items: [
-      "Best Custom Design Best Single",
-      "Best Family Home Over 2,000 sq. Ft.",
-      "Best Landscape Design",
-      "Business Leader of the Year at Tri-Cities Chamber for our President, Jamileh Askarian",
-      "Business of the Year (20+ Employees) at Tri-Cities Chamber"
+      "Won 2026 Environmental Leader of the Year Award",
+      "Nominated our President, Jamileh Askarian, for the Business Leader of the Year Award"
     ],
     variant: "blue"
   },
@@ -23,9 +20,10 @@ const awards = [
     variant: "white"
   },
   {
-    title: "RIDGE MEADOWS CHAMBER",
+    title: "TRI-CITIES CHAMBER OF\nCOMMERCE AWARDS",
     items: [
-      "Won 2026 Environmental Leader of the Year Award"
+      "Nominated for the Business of the Year (20+ Employees) Award",
+      "Nominated our President, Jamileh Askarian, for the Business Leader of the Year Award"
     ],
     variant: "white"
   },
@@ -66,10 +64,34 @@ export default function Awards() {
               Award-Winning Heritage
             </h2>
             <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-[700px] mx-auto">
-              Our legacy of excellence has earned us recognition across the Lower Mainland and beyond.
-              From design innovation to customer satisfaction, Noura Homes' excellence has been
-              recognized with multiple awards and nominations.
+              Recognized as an award-winning custom home builder in Maple Ridge, Tri-Cities, and across the Lower
+              Mainland, Noura Homes has built a reputation grounded in quality craftsmanship and client satisfaction.
+              From design innovation to project delivery, our work has earned multiple awards and nominations, with
+              recognition from organizations such as the Ridge Meadows Chamber of Commerce and coverage in Maple Ridge
+              News.
             </p>
+            <ul className="mt-6 mx-auto max-w-[820px] list-disc gap-x-5 gap-y-2 pl-5 text-left text-sm leading-relaxed text-white/90 md:grid md:grid-cols-2 md:text-base">
+              <li>
+                <a
+                  href="https://www.tricitieschamber.com/2025/12/17/nominees-announced-for-tri-cities-chamber-2026-business-excellence-awards/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-white"
+                >
+                  2026 Business Excellence Awards nominees
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://mapleridgenews.com/2026/03/09/ridge-meadows-chambers-honours-excellent-businesses-at-2026-awards-night/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-white"
+                >
+                  2026 Maple Ridge Awards winners
+                </a>
+              </li>
+            </ul>
           </motion.div>
         </div>
 

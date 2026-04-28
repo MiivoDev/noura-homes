@@ -4,27 +4,24 @@ import { ProjectImageTextGrid } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 import MoreMessagesFromOwners from './MoreMessagesFromOwners';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/07b8b871-b51b-4d4c-a0a4-22b88318d97c';
-const lifeHappensImage = 'https://www.figma.com/api/mcp/asset/2777a558-988c-4fdd-a033-efa091cf5e04';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/561ff49a-eb05-41cb-85d3-571692b95cd2';
-
-/** Same files as `public/Noura Estates 1 & 2`; URL-safe folder for reliable static serving */
-const nouraEstatesAsset = (filename: string) => `/noura-estates-1-2/${filename}?v=20260420-2`;
+const heroImage = '/noura-estates-1-2/hero.jpg';
+const lifeHappensImage = '/noura-estates-1-2/gallery-01.webp';
+const ctaImage = '/Banner.jpg';
 
 const nouraEstatesGalleryImages = [
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-02s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-03s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-06s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-10s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-12s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-17s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-19s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-23s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-25s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-32s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-33s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-36s.jpg'),
-  nouraEstatesAsset('640-Hillcrest-St-360hometours-40s.jpg'),
+  '/noura-estates-1-2/gallery-01.webp',
+  '/noura-estates-1-2/gallery-02.webp',
+  '/noura-estates-1-2/gallery-03.webp',
+  '/noura-estates-1-2/gallery-04.webp',
+  '/noura-estates-1-2/gallery-05.webp',
+  '/noura-estates-1-2/gallery-06.webp',
+  '/noura-estates-1-2/gallery-07.webp',
+  '/noura-estates-1-2/gallery-08.webp',
+  '/noura-estates-1-2/gallery-09.webp',
+  '/noura-estates-1-2/gallery-10.webp',
+  '/noura-estates-1-2/gallery-11.webp',
+  '/noura-estates-1-2/gallery-12.webp',
+  '/noura-estates-1-2/gallery-13.webp',
 ];
 export default function NouraEstatesOneTwoPage() {
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -117,7 +114,7 @@ export default function NouraEstatesOneTwoPage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

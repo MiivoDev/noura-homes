@@ -15,12 +15,11 @@ export type ProjectPageHeroProps = {
 };
 
 const titleBaseClass =
-  'min-w-0 max-w-full font-display leading-[1.05] tracking-[-0.04em] text-white ' +
-  'text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.25rem]';
+  'min-w-0 max-w-full font-display leading-[1.2] tracking-[-0.01em] text-primary ' +
+  'text-[38px] md:text-[44px] lg:text-[56px]';
 
 const ctaClass =
-  'shrink-0 self-start bg-white px-6 py-3 text-base font-medium text-primary transition-colors hover:bg-primary hover:text-white ' +
-  'sm:self-end';
+  'inline-flex items-center justify-center bg-secondary px-[18px] py-[10px] text-[16px] font-medium text-white transition-colors hover:bg-secondary/90';
 
 /**
  * Project detail hero: full-bleed image and large display title. Optional CTA
@@ -43,17 +42,19 @@ export function ProjectPageHero({
       <div className={cn('absolute inset-0', overlayClassName)} />
       <div
         className={cn(
-          'relative z-10 mx-auto flex min-h-[378px] w-full max-w-[1600px] items-end px-8 lg:px-16 sm:min-h-[458px] md:min-h-[618px] lg:min-h-[803px]',
+          'relative z-10 mx-auto flex min-h-[378px] w-full max-w-[1600px] items-end px-5 sm:min-h-[458px] md:min-h-[618px] lg:min-h-[803px] lg:px-16',
           bottomPaddingClass,
         )}
       >
-        <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
-          <h1 className={cn('min-w-0', titleBaseClass, extraTitleClassName)}>{title}</h1>
-          {showCta ? (
-            <a href={ctaHref} className={ctaClass}>
-              {ctaLabel}
-            </a>
-          ) : null}
+        <div className="w-fit max-w-[calc(100vw-2.5rem)] bg-background px-6 py-6 text-primary md:max-w-[680px] md:px-8 md:py-8 lg:ml-[40px] lg:max-w-[920px] lg:px-[40px] lg:py-[36px]">
+          <div className={cn('flex flex-col items-start', showCta ? 'gap-6' : 'gap-0')}>
+            <h1 className={cn('min-w-0', titleBaseClass, extraTitleClassName)}>{title}</h1>
+            {showCta ? (
+              <a href={ctaHref} className={ctaClass}>
+                {ctaLabel}
+              </a>
+            ) : null}
+          </div>
         </div>
       </div>
     </section>

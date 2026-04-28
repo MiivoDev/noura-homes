@@ -4,9 +4,9 @@ import MoreMessagesFromOwners from './MoreMessagesFromOwners';
 import { ProjectImageTextGrid } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/e89fb717-9a65-438b-bc15-de2fd19e9d7f';
-const lifeHappensImage = 'https://www.figma.com/api/mcp/asset/716e24bb-ca13-4911-9ef0-a0329120cccc';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/9eb22385-8919-4a5f-9839-8ecf82246df4';
+const heroImage = '/Platinum%20Rose%20Estates/05.jpg';
+const lifeHappensImage = '/Platinum%20Rose%20Estates/06_1409-Kingston-St-360hometours.jpg';
+const ctaImage = '/Banner.jpg';
 
 const platinumRoseAsset = (filename: string) =>
   `/Platinum%20Rose%20Estates/${encodeURIComponent(filename)}?v=20260420`;
@@ -113,7 +113,7 @@ export default function PlatinumRoseEstatesPage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

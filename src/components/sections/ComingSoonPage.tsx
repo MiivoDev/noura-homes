@@ -5,28 +5,40 @@ import { ProjectPageHero } from './ProjectPageHero';
 
 const heroImage = 'https://www.figma.com/api/mcp/asset/41067b3f-ee51-46b9-888b-428ee6594dbf';
 const introImage = 'https://www.figma.com/api/mcp/asset/ae14e0ad-14a5-412e-a422-228c87a28bdf';
-const floorPlanHeroLeft = 'https://www.figma.com/api/mcp/asset/ea74ccd5-4550-4abc-b186-7ceb60fba4e6';
-const floorPlanHeroRight = 'https://www.figma.com/api/mcp/asset/da00feb4-b5bb-4ad9-862d-93aaae78aa4a';
 const ctaImage = 'https://www.figma.com/api/mcp/asset/97f65625-4591-496d-82c4-77d567a4c206';
 
 const floorPlanSlides = [
-  'https://www.figma.com/api/mcp/asset/93f20ef2-3506-4f0a-ae9c-0f2de4e96a38',
-  'https://www.figma.com/api/mcp/asset/a1436955-dd08-42d4-8b59-54b81933176a',
-  'https://www.figma.com/api/mcp/asset/72f764be-f3df-47b2-a1b8-796defe1774d',
-  'https://www.figma.com/api/mcp/asset/5f480392-8778-4d0f-997b-bdc9ab7a1084',
-  'https://www.figma.com/api/mcp/asset/9356cf83-5339-4d8c-a98e-3e744e450086',
-  'https://www.figma.com/api/mcp/asset/5f9ff1c1-2f8a-49c8-b6ad-28920f7e0b68',
-  'https://www.figma.com/api/mcp/asset/9b336b5a-8666-4e52-b59b-ae1a03f1ef81',
-  'https://www.figma.com/api/mcp/asset/2523ff4c-259a-4c54-b5f9-c26bd9a70b55',
-  'https://www.figma.com/api/mcp/asset/2b95bdba-5192-4b7a-894b-676f913dc4dc',
+  '/sapphire-living/floor-plan-01-units-a.webp',
+  '/sapphire-living/floor-plan-02-units-a5.webp',
+  '/sapphire-living/floor-plan-03-units-b.webp',
+  '/sapphire-living/floor-plan-04-units-b6-b9.webp',
+  '/sapphire-living/floor-plan-05-units-b11.webp',
+  '/sapphire-living/floor-plan-06-units-c.webp',
+  '/sapphire-living/floor-plan-07-units-c13.webp',
+  '/sapphire-living/floor-plan-08-units-c14.webp',
+  '/sapphire-living/floor-plan-09-units-c16.webp',
+] as const;
+
+const gallerySlides = [
+  '/sapphire-living/gallery-01.webp',
+  '/sapphire-living/gallery-02.webp',
+  '/sapphire-living/gallery-03.webp',
+  '/sapphire-living/gallery-04.webp',
+  '/sapphire-living/gallery-05.webp',
 ] as const;
 
 export default function ComingSoonPage() {
   const floorPlanRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
 
   const scrollFloorPlans = (left: number) => {
     if (!floorPlanRef.current) return;
     floorPlanRef.current.scrollBy({ left, behavior: 'smooth' });
+  };
+
+  const scrollGallery = (left: number) => {
+    if (!galleryRef.current) return;
+    galleryRef.current.scrollBy({ left, behavior: 'smooth' });
   };
 
   return (
@@ -78,41 +90,13 @@ export default function ComingSoonPage() {
           <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary text-center">
             Floor Plans
           </h2>
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <img src={floorPlanHeroLeft} alt="Floor plan preview 1" className="w-full h-[260px] md:h-[360px] lg:h-[426px] object-cover" />
-            <img src={floorPlanHeroRight} alt="Floor plan preview 2" className="w-full h-[260px] md:h-[360px] lg:h-[426px] object-cover" />
-          </div>
-          <div className="mt-7 flex items-center justify-center gap-2">
-            <button
-              type="button"
-              aria-label="Previous floor plan preview"
-              className="h-[34px] w-[34px] rounded-full border border-primary flex items-center justify-center text-primary"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-            <button
-              type="button"
-              aria-label="Next floor plan preview"
-              className="h-[34px] w-[34px] rounded-full border border-primary flex items-center justify-center text-primary"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-12 lg:py-14">
-        <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary text-center">
-            Floor Plans
-          </h2>
           <div ref={floorPlanRef} className="mt-8 flex gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth">
             {floorPlanSlides.map((src, index) => (
               <img
                 key={src}
                 src={src}
-                alt={`Floor plan ${index + 1}`}
-                className="w-full md:w-[681px] h-[280px] md:h-[360px] lg:h-[426px] object-cover shrink-0 snap-start"
+                alt={`Sapphire Living floor plan ${index + 1}`}
+                className="w-full md:w-[681px] h-[280px] md:h-[360px] lg:h-[426px] object-contain shrink-0 snap-start bg-white"
               />
             ))}
           </div>
@@ -137,6 +121,42 @@ export default function ComingSoonPage() {
         </div>
       </section>
 
+      <section className="bg-white py-12 lg:py-14">
+        <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
+          <h2 className="font-display text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-0.48px] text-primary text-center">
+            Gallery
+          </h2>
+          <div ref={galleryRef} className="mt-8 flex gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth">
+            {gallerySlides.map((src, index) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Sapphire Living gallery ${index + 1}`}
+                className="w-full md:w-[681px] h-[280px] md:h-[360px] lg:h-[426px] object-cover shrink-0 snap-start"
+              />
+            ))}
+          </div>
+          <div className="mt-7 flex items-center justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => scrollGallery(-700)}
+              aria-label="Show previous gallery images"
+              className="h-[34px] w-[34px] rounded-full border border-primary flex items-center justify-center text-primary"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollGallery(700)}
+              aria-label="Show next gallery images"
+              className="h-[34px] w-[34px] rounded-full border border-primary flex items-center justify-center text-primary"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section className="relative min-h-[600px] overflow-hidden">
         <img src={ctaImage} alt="Lets connect background" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/30" />
@@ -152,7 +172,7 @@ export default function ComingSoonPage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

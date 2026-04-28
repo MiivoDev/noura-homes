@@ -11,7 +11,7 @@ export default function LeadGen() {
   const clipPath = useTransform(scrollYProgress, [0, 1], ["inset(0 100% 0 0)", "inset(0 0% 0 0)"]);
 
   return (
-    <section ref={containerRef} className="bg-secondary">
+    <section id="build-profile" ref={containerRef} className="bg-secondary">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[700px] lg:min-h-[90vh]">
         {/* Left: Image Reveal */}
         <div className="py-4 pl-4 pr-4 lg:py-8 lg:pl-8 lg:pr-0 relative h-[400px] lg:h-auto">
@@ -20,7 +20,7 @@ export default function LeadGen() {
             className="w-full h-full"
           >
             <img
-              src="/Custom Build.png"
+              src="/services/general-contracting/hero.png"
               alt="Custom Build Profile"
               className="w-full h-full object-cover"
             />

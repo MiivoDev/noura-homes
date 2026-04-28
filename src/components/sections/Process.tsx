@@ -23,7 +23,7 @@ const steps = [
     number: "04",
     title: "WELCOME HOME & BEYOND",
     description: "Our architectural partners translate your vision into detailed blueprints. We handle all necessary permits and approvals, navigating local regulations to ensure a smooth transition from concept to construction.",
-    image: "/process/welcome-home-beyond.png"
+    image: "/image%209.png"
   }
 ];
 

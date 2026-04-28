@@ -44,8 +44,8 @@ export default function Legacy() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="space-y-4 text-white/90 text-base leading-relaxed font-light"
             >
-              <p className="text-[20px] leading-[1.45]">
-                For over 30 years, Noura Homes has been more than a construction company. we are a family-owned partner dedicated to bringing your distinct vision to life. We bridge the gap between architectural artistry and structural integrity.
+              <p>
+                For over 30 years, Noura Homes has been more than a construction company. We are a family-owned partner dedicated to bringing your distinct vision to life. We bridge the gap between architectural artistry and structural integrity.
               </p>
               <p>
                 From navigating complex planning for exclusive subdivisions to executing the finest details of a luxury custom build, our expertise ensures a seamless, transparent journey. We don't just build beautiful houses—we engineer future-ready, energy-efficient homes designed to stand the test of time and grow with your family.

@@ -9,6 +9,7 @@ import Hero from './components/sections/Hero';
 import Services from './components/sections/Services';
 import Legacy from './components/sections/Legacy';
 import Projects from './components/sections/Projects';
+import RecognitionHighlights from './components/sections/RecognitionHighlights';
 import Trust from './components/sections/Trust';
 import Awards from './components/sections/Awards';
 import Process from './components/sections/Process';
@@ -41,6 +42,7 @@ import ContactPage from './components/sections/ContactPage';
 import BlogsPage from './components/sections/BlogsPage';
 import BlogDetailPage from './components/sections/BlogDetailPage';
 import LeylandCustomHomePage from './components/sections/LeylandCustomHomePage';
+import RegentCustomHomePage from './components/sections/RegentCustomHomePage';
 import MadoreCustomHomePage from './components/sections/MadoreCustomHomePage';
 import RobsonCustomHomePage from './components/sections/RobsonCustomHomePage';
 import StewartCustomHomePage from './components/sections/StewartCustomHomePage';
@@ -70,6 +72,7 @@ export default function App() {
   const isMultiFamilyHomesPage = currentPath === '/projects/current/multi-family-homes';
   const isPastCustomHomesPage = currentPath === '/projects/past/custom-homes';
   const isLeylandCustomHomePage = currentPath === '/projects/past/custom-homes/leyland-custom-home';
+  const isRegentCustomHomePage = currentPath === '/projects/past/custom-homes/regent-custom-home';
   const isMadoreCustomHomePage = currentPath === '/projects/past/custom-homes/madore-custom-home';
   const isRobsonCustomHomePage = currentPath === '/projects/past/custom-homes/robson-custom-home';
   const isStewartCustomHomePage = currentPath === '/projects/past/custom-homes/stewart-custom-home';
@@ -327,6 +330,20 @@ export default function App() {
     );
   }
 
+  if (isRegentCustomHomePage) {
+    return (
+      <div className="min-h-screen bg-background text-text-dark font-sans selection:bg-primary selection:text-white">
+        <Navbar />
+        <SmoothScroll>
+          <main>
+            <RegentCustomHomePage />
+          </main>
+          <Footer />
+        </SmoothScroll>
+      </div>
+    );
+  }
+
   if (isMadoreCustomHomePage) {
     return (
       <div className="min-h-screen bg-background text-text-dark font-sans selection:bg-primary selection:text-white">
@@ -531,6 +548,7 @@ export default function App() {
           <Hero />
           <Services />
           <Legacy />
+          <RecognitionHighlights />
           <Projects />
           <Trust />
           <Awards />

@@ -5,29 +5,24 @@ import { DefaultVideoLayout, defaultLayoutIcons } from '@vidstack/react/player/l
 import { ProjectImageTextGrid, projectImageEndSlotClass } from './ProjectImageTextGrid';
 import { ProjectPageHero } from './ProjectPageHero';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/7fd147e7-ae6f-4d86-a873-c464bce3f284';
-const qualityImage = 'https://www.figma.com/api/mcp/asset/7455222b-fd09-45d9-91a5-8c32974e5868';
-const startsHereImage = 'https://www.figma.com/api/mcp/asset/bf71488c-9c76-403f-8049-e0eb98e95320';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/808cca68-762c-45e2-aec4-ce24559bb922';
+const heroImage = '/trafalgar-luxury-townhomes/hero.webp';
+const qualityImage = '/trafalgar-luxury-townhomes/gallery-01.webp';
+const startsHereImage = '/trafalgar-luxury-townhomes/gallery-02.webp';
+const ctaImage = '/Banner.jpg';
 
 /** Legacy page: nourahomes.com/pages/our-projects/past-projects/trafalgar-luxury-townhomes */
 const TRAFALGAR_YOUTUBE_VIDEO_ID = 'ufUkWqysP5o';
 
-const trafalgarAsset = (filename: string) =>
-  `/Trafalgar%20Luxury%20Townhomes/${encodeURIComponent(filename)}?v=20260420`;
-
 const trafalgarGalleryImages = [
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-02s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-04s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-09s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-13s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-18 (1).jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-21s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-22s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-23s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-24s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-29s.jpg'),
-  trafalgarAsset('103-1392-Trafalgar-St-Coquitlam-360hometours-33s.jpg'),
+  '/trafalgar-luxury-townhomes/gallery-01.webp',
+  '/trafalgar-luxury-townhomes/gallery-02.webp',
+  '/trafalgar-luxury-townhomes/gallery-03.webp',
+  '/trafalgar-luxury-townhomes/gallery-04.webp',
+  '/trafalgar-luxury-townhomes/gallery-05.webp',
+  '/trafalgar-luxury-townhomes/gallery-06.webp',
+  '/trafalgar-luxury-townhomes/gallery-07.webp',
+  '/trafalgar-luxury-townhomes/gallery-08.webp',
+  '/trafalgar-luxury-townhomes/gallery-09.webp',
 ];
 
 export default function TrafalgarLuxuryTownhomesPage() {
@@ -182,7 +177,7 @@ export default function TrafalgarLuxuryTownhomesPage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

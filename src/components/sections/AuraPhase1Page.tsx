@@ -6,12 +6,12 @@ import { ProjectPageHero } from './ProjectPageHero';
 /** First embed on Noura Homes legacy page (Aura Phase 1; page also lists two more testimonial videos below). */
 const AURA_PHASE_1_YOUTUBE_VIDEO_ID = '_j0ohUlzef4';
 
-const heroImage = 'https://www.figma.com/api/mcp/asset/790fb372-8045-41ec-9b0e-502f9b247a23';
-const qualityImage = 'https://www.figma.com/api/mcp/asset/109e27b8-61d9-497c-8bae-a3dcfb50e653';
-const startsHereImage = 'https://www.figma.com/api/mcp/asset/358f6c88-e638-4ccf-a84d-d2b3f1875757';
-/** Files in `public/Aura 1/` — main photo first for video poster + carousel order */
+const heroImage = '/aura-1/main-photo.jpg';
+const qualityImage = '/aura-1/1406-Strawline-Hill-St-Coquitlam-360hometours-03s.jpg';
+const startsHereImage = '/aura-1/1406-Strawline-Hill-St-Coquitlam-360hometours-04s.jpg';
+/** Files in `public/aura-1/` — main photo first for video poster + carousel order */
 const auraPhase1GalleryFiles = [
-  'make this the main photo.jpg',
+  'main-photo.jpg',
   '1406-Strawline-Hill-St-Coquitlam-360hometours-03s.jpg',
   '1406-Strawline-Hill-St-Coquitlam-360hometours-04s.jpg',
   '1406-Strawline-Hill-St-Coquitlam-360hometours-05s.jpg',
@@ -23,9 +23,9 @@ const auraPhase1GalleryFiles = [
 ] as const;
 
 const auraPhase1PublicImage = (file: string) =>
-  `/Aura%201/${encodeURIComponent(file)}`;
+  `/aura-1/${encodeURIComponent(file)}`;
 
-const ctaImage = 'https://www.figma.com/api/mcp/asset/b50910c6-18e0-4009-9114-a06332149439';
+const ctaImage = '/Banner.jpg';
 
 export default function AuraPhase1Page() {
   const [videoPlaying, setVideoPlaying] = useState(false);
@@ -173,7 +173,7 @@ export default function AuraPhase1Page() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-[18px] py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

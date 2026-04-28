@@ -2,8 +2,8 @@ import { featuredTestimonials, type FeaturedTestimonial } from '@/src/data/featu
 import { cn } from '@/src/lib/utils';
 import { TestimonialVideoMedia } from './TestimonialVideoMedia';
 
-const heroImage = '/testimonials-hero-force-refresh-20260416.png';
-const ctaImage = 'https://www.figma.com/api/mcp/asset/0dddc23f-4fba-4322-b17b-c4adbe41ecd7';
+const heroImage = '/testimonials/hero-figma-329-1548.png';
+const ctaImage = '/Banner.jpg';
 
 const ownerMessages = [
   {
@@ -88,17 +88,16 @@ export default function TestimonialsPage() {
 
   return (
     <div className="bg-background">
-      <section className="relative min-h-[480px] overflow-hidden bg-zinc-900 pt-[82px] sm:min-h-[540px] md:min-h-[640px] lg:min-h-[820px]">
-        {/* object-cover: pin to top of photo on small screens so the crop includes max headroom above the family. */}
+      <section className="relative min-h-[540px] overflow-hidden bg-zinc-900 pt-[82px] sm:min-h-[620px] md:min-h-[740px] lg:min-h-[940px]">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src={heroImage}
             alt="Happy family in their home"
-            className="h-full w-full object-cover object-top sm:object-[50%_14%] md:object-center"
+            className="h-full w-full scale-[1.03] object-cover object-top translate-y-6"
           />
         </div>
         <div className="absolute inset-0 bg-black/20" />
-        <div className="relative z-10 mx-auto flex min-h-[398px] w-full max-w-[1600px] items-center justify-center px-8 sm:min-h-[458px] md:min-h-[558px] lg:min-h-[738px] lg:px-16">
+        <div className="relative z-10 mx-auto flex min-h-[458px] w-full max-w-[1600px] items-center justify-center px-8 sm:min-h-[538px] md:min-h-[658px] lg:min-h-[858px] lg:px-16">
           <h1 className="font-display text-[26px] leading-[1.2] tracking-[-0.48px] text-white sm:text-[32px] md:text-[40px] lg:-translate-y-5 lg:text-[48px] text-center [text-wrap:balance] max-w-[20ch] sm:max-w-none">
             What Our Clients Love
           </h1>
@@ -157,7 +156,7 @@ export default function TestimonialsPage() {
               href="#contact"
               className="mt-7 inline-flex items-center justify-center border border-white px-5 py-2.5 text-[16px] font-medium text-white hover:bg-white hover:text-primary transition-colors"
             >
-              Lets Connect
+              Let's Connect
             </a>
           </div>
         </div>

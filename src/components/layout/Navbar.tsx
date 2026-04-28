@@ -75,7 +75,8 @@ const navItems: NavItem[] = [
     ]
   },
   { label: 'Testimonials', href: '/testimonials' },
-  { label: 'Blogs', href: '/blogs' }
+  { label: 'Blogs', href: '/blogs' },
+  { label: 'Contact Us', href: '/contact' }
 ];
 
 export default function Navbar() {
@@ -167,13 +168,13 @@ export default function Navbar() {
                     {item.children.map((child) => (
                       'subItems' in child ? (
                         <div key={child.label} className="relative group/current-projects">
-                          <a
-                            href={child.href}
+                          <button
+                            type="button"
                             className="flex items-center justify-between px-4 py-2 text-sm hover:bg-gray-50 hover:text-primary transition-colors"
                           >
                             <span>{child.label}</span>
                             <ChevronRight className="w-4 h-4" />
-                          </a>
+                          </button>
                           <div className="absolute left-full top-0 ml-1 opacity-0 invisible group-hover/current-projects:opacity-100 group-hover/current-projects:visible transition-all duration-200">
                             <div className="bg-white text-gray-700 shadow-xl border border-gray-100 min-w-[250px] py-2">
                               {child.subItems.map((subItem) => (
@@ -196,7 +197,7 @@ export default function Navbar() {
                             item.label === 'Our Projects' ? 'flex items-center justify-between' : 'block'
                           }`}
                         >
-                          {item.label === 'Our Projects' ? (
+                          {item.label === 'Our Projects' && child.label !== 'Coming Soon' ? (
                             <>
                               <span>{child.label}</span>
                               <ChevronRight className="w-4 h-4" />
@@ -215,7 +216,7 @@ export default function Navbar() {
         </div>
 
         <Button variant="default" className="hidden md:inline-flex" asChild>
-          <a href="/contact">Contact Us</a>
+          <a href="/#build-profile">Discover Build Profile</a>
         </Button>
 
         <button
@@ -326,11 +327,11 @@ export default function Navbar() {
             })}
 
             <a
-              href="/contact"
+              href="/#build-profile"
               className="mt-3 inline-flex w-full items-center justify-center h-10 px-5 bg-secondary text-white text-sm font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contact Us
+              Discover Build Profile
             </a>
           </div>
         </div>
